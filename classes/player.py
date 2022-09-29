@@ -11,6 +11,8 @@ and utilities to use
 the function of validating coordinates.
 """
 from .board import Board
+import random
+import classes.utilities
 
 
 class Player:
@@ -67,6 +69,8 @@ class Player:
                     '(e.g. 3,4 or 34: ) \n'
                 ).strip(" ")
 
+                guess_coordinate = classes.utilities.coord_input
+                _validator(guess_coordinate)
                 previously_guessed = guess_coordinate in self.previous_guesses
 
                 if previously_guessed:
