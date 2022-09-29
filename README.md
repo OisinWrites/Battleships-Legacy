@@ -36,6 +36,8 @@ I want to be able to place my own ships both manually and automatically.
     - Define boards by handling them as coordinates inside arrays
     All this is done within a scalable frame, allowing for user input of board size.
 - Remembered to import random module for use in Boards class.
+- Player instance initialisation created, and the make guess function which currently gives the computer only a random choice, takes in the players input as
+coordinates, and validates both as already guessed.
 # Errors
 
 # Testing
