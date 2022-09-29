@@ -47,7 +47,8 @@ class Board:
         """
         self.size = size
         self.user = user
-        self.number_of_ships = 5
+        self.number_of_ships = int(5 * size/10)
+        self.number_of_ships_remaining = self.number_of_ships
         self.number_of_ships_per_category = int(self.number_of_ships / 5)
 
         if self.number_of_ships_per_category < 1:
@@ -73,8 +74,8 @@ class Board:
         character board less characters used in string.
         """
         utilities.clear_display()
-        print((" ") * 30 + f"This is {self.user}'s board")
-        print((" ") * 3 + "Friendly Waters" + (" ") * 44 + "Enemy Waters")
+        print(" " * 16 * self.number_of_ships_per_category * 2 + f"This is {self.user} board")
+        print(" " * 4 * self.number_of_ships_per_category * 2 + "Friendly Waters" + " " * (self.size * 2 + 4) + "Enemy Waters")
 
         # code to print top 'x axis' coordinates, scalable to size
         rowHeader = " "
