@@ -49,5 +49,14 @@ class Board:
         """
         return [['#' for count in range(size)] for count in range(size)]
 
+    def display_board(self):
+        """
+        Prints the users view of the boards in the terminal.
+        Prints a header using the user's input name, and subheaders
+        for each board, parted by " " spaces, calculated by the 80
+        character board less characters used in string.
+        """
+        print((" ") * 30 + f"This is {self.user}'s board")
+        print((" ") * 3 + "Friendly Waters" + (" ") * 44 + "Enemy Waters")
 
-    def build_ships()
+    def build_ships():
