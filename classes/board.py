@@ -42,7 +42,7 @@ class Board:
         """
         self.size = size
         self.user = user
-        self.number_of_ships = int((size)/2 + 1)
+        self.number_of_ships = int(((size)//2) + 1)
 
     def build_board(size):
         """

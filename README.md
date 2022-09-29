@@ -112,7 +112,9 @@ starting coords.
         Results: Fixed error, progress to next.
 
         Error: The amount of ships is to be determined by board size. However this is written as size divided by 2 + 1. I can't divide a str by an int.
-        Method: Trying wrapping size in brackets.
+        Methods: Trying wrapping size in brackets. Failed.
+                - Wrapping (size)/2 in brackets from + 1, to enforce BOMDAS
+                - Giving expression // instead of / for rounding function just discovered.
         Results:
 
 # Deployment
