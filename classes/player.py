@@ -30,7 +30,7 @@ class Player:
         self.size = size
         self.board = Board(size, name)
         self.previous_guesses = []
-    
+
     def make_guess(self):
         """
         This is the function that translates the user's
@@ -58,3 +58,28 @@ class Player:
                 # for return
                 self.previous_guesses.append(guess_coordinate)
                 valid_guess = True
+            else:
+                # when name is not computer, it is the player's guess
+                # prompts input from player for coordinates
+                guess_coordinate = input(
+                    'Select coordinates for'
+                    f'missile launch, Captain {self.user}!'
+                    '(e.g. 3,4 or 34: ) \n'
+                ).strip(" ")
+
+                previously_guessed = guess_coordinate in self.previous_guesses
+
+                if previously_guessed:
+                    print(
+                        f"But Captain {self.user}, we've already"
+                        "hit that location, we haven't missiles to spare!"
+                        "Surely there's another location the enemy"
+                        "could be hiding?"
+                    )
+                    continue
+                else:
+                    self.board.display()
+                    self.previous_guesses.append(guess_coordinate)
+                    valid_guess = True
+
+        return guess_coordinate
