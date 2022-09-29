@@ -115,6 +115,8 @@ starting coords.
         Methods: Trying wrapping size in brackets. Failed.
                 - Wrapping (size)/2 in brackets from + 1, to enforce BOMDAS
                 - Giving expression // instead of / for rounding function just discovered.
+                Failed
+                - Readdress the problem through code in board.py lines 46-54
         Results:
 
 # Deployment

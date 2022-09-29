@@ -42,7 +42,16 @@ class Board:
         """
         self.size = size
         self.user = user
-        self.number_of_ships = int(((size)//2) + 1)
+        self.number_of_ships = int(5 * size/10)
+        self.number_of_ships_per_category = int(self.number_of_ships / 5)
+
+        if self.number_of_ships_per_category < 1:
+            self.number_of_ships_per_category = 1
+
+        self.ship_board = self.build_board(size)
+        self.guess_board = self.build_board(size)
+        self.ships = self.build_ships()
+        self.ship_map = self.create_ships_coords_map()
 
     def build_board(size):
         """
