@@ -5,7 +5,7 @@ instances of a "submarine" ship.
 It imports the ship class in order to
 give itself the inheritance of that class.
 """
-from ship import Ship
+from .ship import Ship
 
 
 class Submarine(Ship):
