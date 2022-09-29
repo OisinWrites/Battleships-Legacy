@@ -131,3 +131,34 @@ class Board:
         if self.user != "Computer":
             self.display()
         return ships
+
+    def build_ship(self, ship, occupied_tiles):
+        """
+        Function builds the ship in the chosen direction and advises user if
+        the intended location is already occupied.
+
+        If already occupied it generates randomly a new start coordinate, from
+        which to build the ship.
+        """
+        placement_process = True
+
+        while placement_process:
+            # instance marked as temp while testing validity during process
+            temp_ship = [ship.start_coordinate]
+            # for each position of a ship, determined by its length,
+            # repeat process of setting coordinates of each tile occupied
+            for i in range(1, ship.length):
+                # for vertical ships
+                if ship.direction == "v":
+                    next_tile = (
+                        ship.start_coordinate[0] + i,
+                        ship.start_coordinate[1]
+                    )
+                    index_to_increment = 0
+                # for horizontal ships
+                elif ship.direction == "h":
+                    next_tile = (
+                        ship.start_coordinate[0],
+                        ship.start_coordinate[1] + i,
+                    )
+                    index_to_increment = 1

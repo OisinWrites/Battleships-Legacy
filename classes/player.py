@@ -83,3 +83,12 @@ class Player:
                     valid_guess = True
 
         return guess_coordinate
+
+    def take_turn(self, opponent):
+        """
+        This function takes in the logic of the guess function
+        and defines the turns between player and computer.
+        """
+        print(f"{self.name}'s turn")
+        guess = self.make_guess()
+        guess_hit_check = opponent.board.guess_checker(guess)
