@@ -88,7 +88,16 @@ class Player:
         """
         This function takes in the logic of the guess function
         and defines the turns between player and computer.
+        The relevant board is then updated with the result.
         """
         print(f"{self.name}'s turn")
         guess = self.make_guess()
         guess_hit_check = opponent.board.guess_checker(guess)
+        if (guess_hit_check is True) & (self.name == "Computer"):
+            print(guess_hit_check)
+        self.board.update_board(guess, guess_hit_check, opponent)
+        if self.name != "Computer":
+            self.board.display()
+
+        else:
+            opponent.board.display()
