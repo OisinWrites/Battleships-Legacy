@@ -43,6 +43,11 @@ class Board:
         self.user = user
         self.number_of_ships = int(size/2 + 1)
 
-    def build_board()
+    def build_board(size):
+        """
+        Will create a square of '#'s scaling with size.
+        """
+        return [['#' for count in range(size)] for count in range(size)]
+
 
     def build_ships()
