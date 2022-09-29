@@ -174,6 +174,9 @@ class Board:
                     )
                     index_to_increment = 1
 
+                duplicate_tile = utilities.duplicate_tile_check(
+                    ship, occupied_tiles, next_tile)
+
                 # Check if ship will go over the board edge
                 # and requests/generates new start coordinate if required
                 if ship.start_coordinate[index_to_increment] + \
