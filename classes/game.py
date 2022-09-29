@@ -30,7 +30,8 @@ class Game:
         """
         Function displays welcome screen with ASCII art
         """
-        print("""______       __   __   __
+        print("""
+                 ______       __   __   __
                 |   __ .---.-|  |_|  |_|  .-----.
                 |   __ |  _  |   _|   _|  |  -__|
                 |______|___._|____|____|__|_____|

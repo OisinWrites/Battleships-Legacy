@@ -24,6 +24,8 @@ def size_input():
             print("Surely we haven't run aground?")
             continue
 
+        return size
+
 
 def name_input():
     # Take and validate name
