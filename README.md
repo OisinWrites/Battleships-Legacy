@@ -104,8 +104,17 @@ starting coords.
         Results: Progress to next error log from Heroku.
 
         Error: In input of name, utilities class function, call of string not defined.
-        Method: Importing string module to utilities class.
-        Result:
+        Methods: Importing string module to utilities class.
+        Result: Fixed error, game progressing.
+
+        Error: Any input of board size returns same input prompt.
+        Methods: No return given at end of loop, so loop looped.
+        Results: Fixed error, progress to next.
+
+        Error: The amount of ships is to be determined by board size. However this is written as size divided by 2 + 1. I can't divide a str by an int.
+        Method: Trying wrapping size in brackets.
+        Results:
+
 # Deployment
     ## Deploying to Heroku
     1 Create an account with Heroku, and navigate to the main page by clicking on "Heroku" at top left of screen.
