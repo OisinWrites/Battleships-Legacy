@@ -34,7 +34,8 @@ I want to be able to place my own ships both manually and automatically.
     - Create an instance of a board for player and computer
     - Print this to the terminal for user to see
     - Define boards by handling them as coordinates inside arrays
-    All this is done within a scalable frame, allowing for user input of board size
+    All this is done within a scalable frame, allowing for user input of board size.
+- Remembered to import random module for use in Boards class.
 # Errors
 
 # Testing

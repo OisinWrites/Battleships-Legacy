@@ -15,6 +15,7 @@ Board calls on each subclass of ship;
 carrier, destroyer, frigate, patrol, and submarine.
 """
 from .carrier import Carrier
+import random
 
 
 class Board:
