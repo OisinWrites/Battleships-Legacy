@@ -23,6 +23,7 @@ I want to be able to place my own ships both manually and automatically.
 - Python files for each class created and defined.
 - Nesting order between classes established in doc string.
 - README file intiated with user stories, features to be included, Build Log, Error, Testing, and Deployment headers. Deployment content completed.
+
 ## Plan of Action
 - Create a minimal viable product version first. Use one ship, random only not manual placement of ships, maybe without error handling yet, or win conditions. Test deployment on Heroku.
         1. Establish ship class
@@ -31,10 +32,13 @@ I want to be able to place my own ships both manually and automatically.
         4. Define the players and pass through the board
         5. Define the game structure and pass through player
         6. Initate game function through run.py file.
+
 ## Ship
 - Create a ship class and add docstring explaining its objects.
+
 ## Ship Subclasses
 - Create only the 'Carrier' class for now, with explaination of its objects.
+
 ## Boards
 - A lot of work done on Boards. So far it does three things:
     - Create an instance of a board for player and computer
@@ -53,9 +57,19 @@ starting coords.
 - Created a function to check guess against 'fleet'.
 - Created a function to reduce number of ships a board has by one.
 - Created a function to trigger sink ship function, where damaged tiles = ship length.
+
 ## Game
 - Started coding game.py file. Given class of game and welcome screen ASCII art. 'Options menu' offers input of hit enter, once any input entered, option_menu False and create players will be called.
 - Outline the functions needed in the file, and their behaviour.
+- Game class has function to create instances of players, user and computer. Afterwhich it calls a play_game function.
+- The Play Game function will:
+ 1. Create a loop while game over condition is false
+ 2. Establish what happens when game over is true
+ 3. Allow player to exit game before game ending conditions are met
+ 4. Trigger ending where all ships are sunking, differentiating between
+ computer or player victory.
+ 5. Give feedback noting result.
+
 ## Utilities
 - Outline functions help in utilities class to be called on throughout other classes.
 - Added all functions for utilities with validation methods.
