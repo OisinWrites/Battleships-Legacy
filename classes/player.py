@@ -5,4 +5,8 @@ a player.
 The class allows them to take turns by guessing
 coordinates and then stores those guesses
 so as not to be repeeated.
+
+Player imports Board,
+and utilities to use
+the function of validating coordinates
 """
