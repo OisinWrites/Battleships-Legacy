@@ -56,6 +56,8 @@ starting coords.
 ## Game
 - Started coding game.py file. Given class of game and welcome screen ASCII art. 'Options menu' offers input of hit enter, once any input entered, option_menu False and create players will be called.
 - Outline the functions needed in the file, and their behaviour.
+## Utilities
+- Outline functions help in utilities class to be called on throughout other classes.
 
 # Testing
 
