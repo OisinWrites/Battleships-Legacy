@@ -40,3 +40,28 @@ class Game:
                                    |__|
         """
               )
+        options_menu = True
+        while options_menu:
+            options = input('Hit enter to begin')
+            options_menu = False
+            self.create_players()
+
+    def create_players(self):
+        """"
+        Takes player name and creates player and computer objects.
+        """
+
+    def play_game():
+        """
+        Initites the turn functions established in player class.
+        """
+
+    def display_both_boards():
+        """
+        Prints player's and computer's boards in terminal
+        """
+
+    def restart_game():
+        """
+        Deletes all objects and refreshes to welcome screen.
+        """

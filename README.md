@@ -17,10 +17,13 @@ I want to be able to place my own ships both manually and automatically.
 6. Automatically scale the number of ships for players based on board size.
 
 # Build Log
+
+## Initialising Repository Setup
 - Python essntials template added.
 - Python files for each class created and defined.
 - Nesting order between classes established in doc string.
 - README file intiated with user stories, features to be included, Build Log, Error, Testing, and Deployment headers. Deployment content completed.
+## Plan of Action
 - Create a minimal viable product version first. Use one ship, random only not manual placement of ships, maybe without error handling yet, or win conditions. Test deployment on Heroku.
         1. Establish ship class
         2. Give one ship subclass its objects
@@ -28,8 +31,11 @@ I want to be able to place my own ships both manually and automatically.
         4. Define the players and pass through the board
         5. Define the game structure and pass through player
         6. Initate game function through run.py file.
+## Ship
 - Create a ship class and add docstring explaining its objects.
+## Ship Subclasses
 - Create only the 'Carrier' class for now, with explaination of its objects.
+## Boards
 - A lot of work done on Boards. So far it does three things:
     - Create an instance of a board for player and computer
     - Print this to the terminal for user to see
@@ -47,6 +53,9 @@ starting coords.
 - Created a function to check guess against 'fleet'.
 - Created a function to reduce number of ships a board has by one.
 - Created a function to trigger sink ship function, where damaged tiles = ship length.
+## Game
+- Started coding game.py file. Given class of game and welcome screen ASCII art. 'Options menu' offers input of hit enter, once any input entered, option_menu False and create players will be called.
+- Outline the functions needed in the file, and their behaviour.
 
 # Testing
 
