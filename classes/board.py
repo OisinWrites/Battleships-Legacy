@@ -14,13 +14,12 @@ to verify that guesses are not being repeated.
 Board calls on each subclass of ship;
 carrier, destroyer, frigate, patrol, and submarine.
 """
-from .carrier import Carrier
 import random
 import classes.utilities
-from submarine import Submarine
-from carrier import Carrier
-from frigate import Frigate
-from patrol import Patrol
+from .submarine import Submarine
+from .carrier import Carrier
+from .frigate import Frigate
+from .patrol import Patrol
 
 
 class Board:
