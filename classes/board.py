@@ -16,6 +16,7 @@ carrier, destroyer, frigate, patrol, and submarine.
 """
 from .carrier import Carrier
 import random
+import classes.utilities
 
 
 class Board:
