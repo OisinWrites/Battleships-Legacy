@@ -29,7 +29,7 @@ I want to be able to place my own ships both manually and automatically.
         5. Define the game structure and pass through player
         6. Initate game function through run.py file.
 - Create a ship class and add docstring explaining its objects.
-
+- Create only the 'Carrier' class for now, with explaination of its objects.
 # Errors
 
 # Testing
