@@ -162,3 +162,14 @@ class Board:
                         ship.start_coordinate[1] + i,
                     )
                     index_to_increment = 1
+
+                # Check if ship will go over the board edge
+                # and requests/generates new start coordinate if required
+                if ship.start_coordinate[index_to_increment] + \
+                        (ship.length - 1) > (self.size-1):
+
+                    ship.start_coordinate = (
+                        random.randint(
+                            0, self.size-1), random.randint(
+                            0, self.size-1))
+                    ship.direction = random.choice(["h", "v"])
