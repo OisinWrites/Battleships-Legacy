@@ -19,9 +19,9 @@ def size_input():
     # Take and validate size
     valid_size = False
     while not valid_size:
-        size = input("How many knots from the coast?")
+        size = input("How many knots from the coast?\n")
         if len(size.strip(" ")) == 0:
-            print("Surely we haven't run aground?")
+            print("Surely we haven't run aground?\n")
             continue
 
         return size
@@ -31,7 +31,7 @@ def name_input():
     # Take and validate name
     valid_name = False
     while not valid_name:
-        name = input("To whom do we report, sir?")
+        name = input("To whom do we report, sir?\n")
         if len(name.strip(" ")) == 0:
             print("Apologies sir, the missiles have left me half deaf."
                   "Could you repeat that, please?")
@@ -42,7 +42,7 @@ def name_input():
             continue
 
         name = string.capwords(name)
-        print(f"Welcome Captain {name}! We await your orders")
+        print(f"Welcome Captain {name}! We await your orders!")
         return name
 
 

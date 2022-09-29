@@ -43,7 +43,7 @@ class Board:
         self.size = size
         self.user = user
         self.number_of_ships = int(5 * size/10)
-        self.number_of_ships_per_category = int(self.number_of_ships / 5)
+        self.number_of_ships_per_category = 5
 
         if self.number_of_ships_per_category < 1:
             self.number_of_ships_per_category = 1

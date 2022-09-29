@@ -117,6 +117,8 @@ starting coords.
                 - Giving expression // instead of / for rounding function just discovered.
                 Failed
                 - Readdress the problem through code in board.py lines 46-54
+                Failed
+                - Hardcoding amount of ships for now to progress. Can return later.
         Results:
 
 # Deployment
