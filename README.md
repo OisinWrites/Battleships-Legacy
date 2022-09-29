@@ -44,7 +44,7 @@ ship coordinates and against 'going off the map'. Until its list of coords do no
 match the existing coords, then it will repeat the function to randomly select the
 starting coords.
 - Created a dictionary of 'fleet' coords to match against guesses.
-# Errors
+- Created a function to check guess against 'fleet'.
 
 # Testing
 

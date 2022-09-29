@@ -210,3 +210,21 @@ class Board:
                 dict(zip(self.ships[i].coordinates,
                          self.ships[i].symbol_list)))
         return ship_log
+
+    def guess_checker(self, guess):
+        """
+        Checks guess against fleet dictionary.
+        Calls method to update ship damage
+        """
+        result = self.ship_map
+        result = result.get(guess)
+        ship = None
+        self.last_hit_sunk_ship = False
+        if result:
+            for i in range(self.number_of_ships):
+                ship = self.ships[i]
+                if result is self.ships[i].symbol_list[0]:
+                    self.update_ship_damage(ship)
+                    return True
+        else:
+            return False
