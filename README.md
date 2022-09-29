@@ -82,6 +82,9 @@ starting coords.
  5. Error message
  6. Clear display
 
+ ## Run
+ - import Game and call on its function
+
 # Testing
 
 # Deployment
