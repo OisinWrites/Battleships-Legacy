@@ -15,6 +15,9 @@ class Carrier(Ship):
     5 coordinates. On the players board it will
     be mapped using a straight line
     of 5 of the letter 'C'.
+    The Ship class has been imported from .ships so
+    that the Carrier class can use it as an argument,
+    giving this class inheritance of the former.
     """
     name = "Carrier"
     length = 5
