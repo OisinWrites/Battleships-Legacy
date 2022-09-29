@@ -45,6 +45,8 @@ match the existing coords, then it will repeat the function to randomly select t
 starting coords.
 - Created a dictionary of 'fleet' coords to match against guesses.
 - Created a function to check guess against 'fleet'.
+- Created a function to reduce number of ships a board has by one.
+- Created a function to trigger sink ship function, where damaged tiles = ship length.
 
 # Testing
 

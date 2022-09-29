@@ -228,3 +228,20 @@ class Board:
                     return True
         else:
             return False
+
+    def update_ship_damage(self, ship):
+        """"
+        Checks through the ships damage tiles and updates as required
+        """
+        ship.number_of_damaged_tiles = ship.number_of_damaged_tiles + 1
+        if ship.number_of_damaged_tiles == ship.length:
+            self.sink_ship()
+
+    def sink_ship(self):
+        """
+        Reduces number of ships by one.
+        """
+        print(f"{self.user} destroyed a ship!!")
+
+        self.number_of_ships -= 1
+        return self.number_of_ships
