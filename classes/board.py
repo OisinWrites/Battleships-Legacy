@@ -195,3 +195,18 @@ class Board:
                     break
 
         return ship.coordinates
+
+    def create_ships_coords_map(self):
+        """"
+        Creates a dictionary of the fleets coordinates,
+        so that damaged ship tiles can be matched against
+        locations for game end condition.
+        Key = coordinate
+        Value = Ship symbol to identify which ship was hit
+        """
+        ship_log = {}
+        for i in range(self.number_of_ships):
+            ship_log.update(
+                dict(zip(self.ships[i].coordinates,
+                         self.ships[i].symbol_list)))
+        return ship_log

@@ -38,6 +38,12 @@ I want to be able to place my own ships both manually and automatically.
 - Remembered to import random module for use in Boards class.
 - Player instance initialisation created, and the make guess function which currently gives the computer only a random choice, takes in the players input as
 coordinates, and validates both as already guessed.
+- Created a build ship def that holds a placement_process while True loop.
+The loop uses ship start coordinates, ship length, and ship direction to automatically log the remaining ship coordinates. It checks these against existing
+ship coordinates and against 'going off the map'. Until its list of coords do not
+match the existing coords, then it will repeat the function to randomly select the
+starting coords.
+- Created a dictionary of 'fleet' coords to match against guesses.
 # Errors
 
 # Testing
