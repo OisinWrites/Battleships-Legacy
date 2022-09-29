@@ -43,7 +43,7 @@ def name_input():
         return name
 
 
-def duplicate_tile_check():
+def duplicate_tile_check(ship, occupied_tiles, next_tile):
     # Checks if tile is already occupied
     for list in occupied_tiles:
         for _ in list:
@@ -53,14 +53,14 @@ def duplicate_tile_check():
                 return True
 
 
-def coord_input_validator():
+def coord_input_validator(user_input):
     # Validates coordinates, and returns error msg function if not
     # Handles different acceptable input formats e.g. 34 & 3,4.
     valid_input = False
     while not valid_input:
         try:
 
-            if len(user_input) < 2 or len(user input) > 3:
+            if len(user_input) < 2 or len(user_input) > 3:
                 raise ValueError
             elif len(user_input) == 2:
                 user_input = (tuple(int(i) for i in user_input))
@@ -75,8 +75,24 @@ def coord_input_validator():
                     user_input = coord_error_msg()
                     continue
 
+        except ValueError:
+            user_input = coord_error_msg()
+
 
 def coord_error_msg():
     # Error message to retry entering coords
+    """"
+    Advices input is invalid,
+    Requests new input and offers guidance on
+    what qualifies as a valid input
+    """
+    new_guess = input(f"Captain {name}, my tinnitus must be affecting"
+                      "my hearing again. Surely you meant to target"
+                      "coordinates in the sea?"
+                      "(e.g. 4,5 or 45): \n").strip(" ")
+    return new_guess
+
+
 def clear_display():
-    # Clears console. Handles for different operating systems thanks to import os
+    # Clears console. Handles for different operating systems thanks
+    # to import os
