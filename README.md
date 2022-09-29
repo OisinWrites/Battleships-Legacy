@@ -121,6 +121,10 @@ starting coords.
                 - Hardcoding amount of ships for now to progress. Can return later.
         Results:
 
+        Error: "build_board takes 1 argument but 2 were given"
+        Methods: Advised to try 'staticmethod' on function
+        Results:
+
 # Deployment
     ## Deploying to Heroku
     1 Create an account with Heroku, and navigate to the main page by clicking on "Heroku" at top left of screen.

@@ -53,6 +53,7 @@ class Board:
         self.ships = self.build_ships()
         self.ship_map = self.create_ships_coords_map()
 
+    @staticmethod
     def build_board(size):
         """
         Will create a square of '#'s scaling with size.
