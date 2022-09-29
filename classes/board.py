@@ -17,6 +17,10 @@ carrier, destroyer, frigate, patrol, and submarine.
 from .carrier import Carrier
 import random
 import classes.utilities
+from submarine import Submarine
+from carrier import Carrier
+from frigate import Frigate
+from patrol import Patrol
 
 
 class Board:
