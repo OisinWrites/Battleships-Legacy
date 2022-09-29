@@ -87,8 +87,17 @@ starting coords.
 
 # Testing
 - Deploying to Heroku from commit number 46.
-        Build failed.
-        Trying to fix by adding requirements.txt
+        Error: Build failed.
+        Methods: Trying to fix by adding requirements.txt.
+        Result: Build successful in Heroku, even though .txt was empty.
+
+        Error: Terminal could not get past line 6 of run.py.
+        Methods: Call on class of game through its parent folder e.g. from classes.game.
+        Result: Progression to next error.
+
+        Error: In player.py class of Board was called from file with incorrect spelling.
+        Methods: Changed boards to board for correct identification of file.
+        Result:
 
 # Deployment
     ## Deploying to Heroku

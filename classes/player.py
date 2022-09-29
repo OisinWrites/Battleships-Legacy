@@ -10,7 +10,7 @@ Player imports Board,
 and utilities to use
 the function of validating coordinates.
 """
-from .boards import Board
+from .board import Board
 
 
 class Player:
