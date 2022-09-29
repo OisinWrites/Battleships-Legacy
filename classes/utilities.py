@@ -12,6 +12,7 @@ operating system for purposes of identifying
 relevant close or clear command.
 """
 import os
+import string
 
 
 def size_input():

@@ -101,7 +101,11 @@ starting coords.
         
         Error: Utilities not recognised in code
         Methods: Matching call of utilities to how its called into file as classes.utilities.
-        Results:
+        Results: Progress to next error log from Heroku.
+
+        Error: In input of name, utilities class function, call of string not defined.
+        Method: Importing string module to utilities class.
+        Result:
 # Deployment
     ## Deploying to Heroku
     1 Create an account with Heroku, and navigate to the main page by clicking on "Heroku" at top left of screen.
