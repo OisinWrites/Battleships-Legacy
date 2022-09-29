@@ -28,7 +28,20 @@ class Board:
     and show the player's ship locations.
     """
 
-    def __init__(self,)
+    def __init__(self, size, user):
+        """
+        Each instance of a board needs to take in its
+        adjustable size, which will be set by the player,
+        and whether it is the player's board or the
+        computer's.
+        The third object of "number of ships" will 
+        determine how many ships are to be placed
+        in a board of variable size, and allow for 
+        scalability.
+        """
+        self.size = size
+        self.user = user
+        self.number_of_ships = int(size/2 + 1)
 
     def build_board()
 
