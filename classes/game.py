@@ -93,12 +93,20 @@ class Game:
                 self.restart_game(player, computer)
                 break
 
-    def display_both_boards():
+    def display_both_boards(self, player, computer):
         """
         Prints player's and computer's boards in terminal
         """
+        player.board.display()
+        computer.board.display()
 
-    def restart_game():
+    def restart_game(self, player1, player2):
         """
-        Deletes all objects and refreshes to welcome screen.
+        Deletes player object and their possessed ship, and boards
+        Returns users back to the welcome screen
         """
+        del (player1)
+        del (player2)
+        utilities.clear_display()
+        self.welcome_screen()
+
