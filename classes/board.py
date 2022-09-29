@@ -247,7 +247,7 @@ class Board:
         ship.number_of_damaged_tiles = ship.number_of_damaged_tiles + 1
         if ship.number_of_damaged_tiles == ship.length:
             self.sink_ship()
-        
+
     def update_board(self, guess, result, opponent):
         """"
         Updates Board with latest hit or miss.
@@ -283,3 +283,9 @@ class Board:
 
         self.number_of_ships -= 1
         return self.number_of_ships
+
+    def are_all_ships_sunk(self):
+        if self.number_of_ships_remaining == 0:
+            return True
+        else:
+            return False
