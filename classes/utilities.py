@@ -15,13 +15,21 @@ import os
 
 
 def size_input():
+    # Take and validate size
+    valid_size = False
+    while not valid_size:
+        size = input("How many knots from the coast?")
+        if len(size.strip(" ")) == 0:
+            print("Surely we haven't run aground?")
+            continue
 
 def name_input():
-
+    # Take and validate name
 def duplicate_tile_check():
-
+    # Checks if tile is already occupied
 def coord_input_validator():
-
+    # Validates coordinates, and returns errpr msg function if not
 def coord_error_msg():
-
+    # Error message to retry entering coords
 def clear_display():
+    # Clears console. Handles for different operating systems thanks to import os
