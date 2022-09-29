@@ -54,7 +54,28 @@ def duplicate_tile_check():
 
 
 def coord_input_validator():
-    # Validates coordinates, and returns errpr msg function if not
+    # Validates coordinates, and returns error msg function if not
+    # Handles different acceptable input formats e.g. 34 & 3,4.
+    valid_input = False
+    while not valid_input:
+        try:
+
+            if len(user_input) < 2 or len(user input) > 3:
+                raise ValueError
+            elif len(user_input) == 2:
+                user_input = (tuple(int(i) for i in user_input))
+                return user_input
+
+            elif len(user_input) < 4:
+                if "," in user_input:
+                    user_input = user_input.split(",")
+                    user_input = (tuple(int(i) for i in user_input))
+                    return user_input
+                else:
+                    user_input = coord_error_msg()
+                    continue
+
+
 def coord_error_msg():
     # Error message to retry entering coords
 def clear_display():
