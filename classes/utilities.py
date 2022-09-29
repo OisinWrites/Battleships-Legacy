@@ -19,12 +19,16 @@ def size_input():
     # Take and validate size
     valid_size = False
     while not valid_size:
-        size = input("How many knots from the coast?\n")
+        size = input("How many knots from the coast will"
+                     "we engage the enemy, 4, 8, or 10?\n")
         if len(size.strip(" ")) == 0:
             print("Surely we haven't run aground?\n")
             continue
+        if (int(size) != 4) & (int(size) != 8) & (int(size) != 10):
+            print("Invalid board size. Valid Options are 4, 8 or 10. \n")
+            continue
 
-        return size
+        return int(size)
 
 
 def name_input():

@@ -46,7 +46,7 @@ class Board:
         """
         self.size = size
         self.user = user
-        self.number_of_ships = int((int(size)//2) + 1)
+        self.number_of_ships = int((size//2) + 1)
         self.number_of_ships_remaining = self.number_of_ships
         self.number_of_ships_per_category = int(self.number_of_ships / 5)
 
@@ -63,8 +63,7 @@ class Board:
         """
         Will create a square of '0's scaling with size.
         """
-        return [['O' for count in range(int(size))]
-                for count in range(int(size))]
+        return [['O' for count in range(size)] for count in range(size)]
 
     def display(self):
         """
@@ -128,8 +127,8 @@ class Board:
         ship_type_index = 0
         for i in range(self.number_of_ships):
             # chooses random number between 0 and board size.
-            random_start = (random.randint(0, self.int(size)-1),
-                            random.randint(0, self.int(size)-1))
+            random_start = (random.randint(0, self.size-1),
+                            random.randint(0, self.size-1))
             # chooses random direction between vertical and horizontal.
             random_direction = random.choice(["v", "h"])
 
