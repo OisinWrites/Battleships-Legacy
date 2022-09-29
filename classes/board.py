@@ -56,9 +56,9 @@ class Board:
     @staticmethod
     def build_board(size):
         """
-        Will create a square of '#'s scaling with size.
+        Will create a square of '0's scaling with size.
         """
-        return [['#' for count in range(size)] for count in range(size)]
+        return [['0' for count in range(size)] for count in range(size)]
 
     def display_board(self):
         """

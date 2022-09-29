@@ -122,8 +122,12 @@ starting coords.
         Results:
 
         Error: "build_board takes 1 argument but 2 were given"
-        Methods: Advised to try 'staticmethod' on function
-        Results:
+        Methods: Advised to try 'staticmethod' on function.
+        Results: Progressed to next error.
+
+        Error: # symbol used for board building, error reports requires int.
+        Methods: Subbed in 0
+        Results: 
 
 # Deployment
     ## Deploying to Heroku
