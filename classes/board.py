@@ -173,3 +173,13 @@ class Board:
                             0, self.size-1), random.randint(
                             0, self.size-1))
                     ship.direction = random.choice(["h", "v"])
+
+                # If next tile is unoccupied, add the coordinate to
+                # a temporay list and if list is equal to the
+                # ship length it is returned to the calling function
+                elif not duplicate_tile:
+                    temp_ship.append(next_tile)
+                    if len(temp_ship) == ship.length:
+                        ship.coordinates = temp_ship
+                        placement_process = False
+                        return ship.coordinates
