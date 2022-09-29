@@ -57,11 +57,41 @@ class Game:
         computer = Player("Computer", size)
         self.play_game(user, computer)
 
-
     def play_game():
         """
         Initites the turn functions established in player class.
+        Checks for game end conditions and give player a way to exit the game.
         """
+        game_over = False
+        while not game_over:
+            player.take_turn(computer)
+            # checks for win returns boolean
+            game_over = computer.board.are_all_ships_sunk()
+            # if win print and exit
+            if game_over is True:
+                self.display_both_boards(player, computer)
+                print("Captain, we've won! With your infallible"
+                      "battle strategy how could we have not succeeded?")
+                input("Hit enter to voyage home.").strip(" ")
+                self.restart_game(player, computer)
+                break
+            # offer human player a way to quit the round.
+            user_input = input("Hit R and enter for a tactical retreat to the"
+                               "Welcome Screen").strip(" ")
+            if user_input.lower() == "R":
+                self.restart_game(player, computer)
+                break
+
+            # repeats the above for the computer player
+            computer.take_turn(player)
+            game_over = player.board.are_all_ships_sunk()
+            self.display_stats(player, computer)
+            if game_over is True:
+                self.display_both_boards(player, computer)
+                print("We've lost Captain, all vessels are scuppered.")
+                input("Hit enter to surrender..").strip(" ")
+                self.restart_game(player, computer)
+                break
 
     def display_both_boards():
         """
