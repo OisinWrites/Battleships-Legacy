@@ -63,7 +63,8 @@ class Board:
         """
         Will create a square of '0's scaling with size.
         """
-        return [['O' for count in range(size)] for count in range(size)]
+        return [['O' for count in range(int(size))]
+                for count in range(int(size))]
 
     def display(self):
         """
