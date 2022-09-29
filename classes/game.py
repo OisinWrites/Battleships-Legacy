@@ -14,7 +14,7 @@ wherein the overarching ship class is nested at the
 very bottom of the chain.
 """
 from .player import Player
-import utilities
+import classes.utilities
 
 
 class Game:

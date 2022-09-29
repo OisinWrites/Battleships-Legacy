@@ -97,7 +97,7 @@ starting coords.
 
         Error: In player.py class of Board was called from file with incorrect spelling.
         Methods: Changed boards to board for correct identification of file.
-        Result:
+        Result: Continuation to next error, still regarding calling of files and modules.
 
 # Deployment
     ## Deploying to Heroku
