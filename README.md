@@ -86,6 +86,9 @@ starting coords.
  - import Game and call on its function
 
 # Testing
+- Deploying to Heroku from commit number 46.
+        Build failed.
+        Trying to fix by adding requirements.txt
 
 # Deployment
     ## Deploying to Heroku
