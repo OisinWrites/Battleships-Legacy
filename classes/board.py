@@ -60,13 +60,14 @@ class Board:
         """
         return [['0' for count in range(size)] for count in range(size)]
 
-    def display_board(self):
+    def display(self):
         """
         Prints the users view of the boards in the terminal.
         Prints a header using the user's input name, and subheaders
         for each board, parted by " " spaces, calculated by the 80
         character board less characters used in string.
         """
+        utilities.clear_display()
         print((" ") * 30 + f"This is {self.user}'s board")
         print((" ") * 3 + "Friendly Waters" + (" ") * 44 + "Enemy Waters")
 
@@ -246,6 +247,33 @@ class Board:
         ship.number_of_damaged_tiles = ship.number_of_damaged_tiles + 1
         if ship.number_of_damaged_tiles == ship.length:
             self.sink_ship()
+        
+    def update_board(self, guess, result, opponent):
+        """"
+        Updates Board with latest hit or miss.
+        """
+        if result is False:
+            # miss uses unicode for ocean emoji
+            self.guess_board[guess[0]][guess[1]] = "\U0001F30A"
+            opponent.board.ship_board[guess[0]][guess[1]] = "\U0001F30A"
+            # Code will only ever show the human users view
+            if self.user != "Computer":
+                self.display()
+            else:
+                opponent.board.display()
+            print(f"SPLASH!!! {self.user} missed")
+
+        else:
+            # hit uses unicode for collision emoji
+            self.guess_board[guess[0]][guess[1]] = "\U0001F4A5"
+            opponent.board.ship_board[guess[0]][guess[1]] = "\U0001F4A5"
+            # Code will only ever show the human users view
+            if self.user != "Computer":
+                self.display()
+
+            if self.check_last_hit_sunk() is False:
+                print(f"{self.user} made a Direct hit!")
+                sounds.play_missile_hit()
 
     def sink_ship(self):
         """
