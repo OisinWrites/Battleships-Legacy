@@ -50,6 +50,12 @@ class Game:
         """"
         Takes player name and creates player and computer objects.
         """
+        user = utilities.name_input()
+        size = utilities.size_input()
+        user = Player(user, size)
+        computer = Player("Computer", size)
+        self.play_game(user, computer)
+
 
     def play_game():
         """
