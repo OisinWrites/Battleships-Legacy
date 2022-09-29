@@ -28,6 +28,7 @@ I want to be able to place my own ships both manually and automatically.
         4. Define the players and pass through the board
         5. Define the game structure and pass through player
         6. Initate game function through run.py file.
+- Create a ship class and add docstring explaining its objects.
 
 # Errors
 
