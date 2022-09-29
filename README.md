@@ -69,6 +69,8 @@ starting coords.
  4. Trigger ending where all ships are sunking, differentiating between
  computer or player victory.
  5. Give feedback noting result.
+- Create function to display both boards.
+- Create function to restart game.
 
 ## Utilities
 - Outline functions help in utilities class to be called on throughout other classes.

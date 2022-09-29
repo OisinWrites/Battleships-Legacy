@@ -109,4 +109,3 @@ class Game:
         del (player2)
         utilities.clear_display()
         self.welcome_screen()
-
