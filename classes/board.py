@@ -34,9 +34,9 @@ class Board:
         adjustable size, which will be set by the player,
         and whether it is the player's board or the
         computer's.
-        The third object of "number of ships" will 
+        The third object of "number of ships" will
         determine how many ships are to be placed
-        in a board of variable size, and allow for 
+        in a board of variable size, and allow for
         scalability.
         """
         self.size = size
@@ -58,5 +58,32 @@ class Board:
         """
         print((" ") * 30 + f"This is {self.user}'s board")
         print((" ") * 3 + "Friendly Waters" + (" ") * 44 + "Enemy Waters")
+
+        # code to print top 'x axis' coordinates, scalable to size
+        rowHeader = " "
+
+        for i in range(self.size):
+            rowHeader = rowHeader + str(i) + "  "
+
+        print("   " + rowHeader + (" ") * (9) + rowHeader)
+        """
+        This code is to print a grid of rows, with
+        as many rows as there are x ""columns"",
+        with an index on the left and adequate spacing.
+        """
+        for index, row in enumerate(zip(self.ship_board, self.guess_board)):
+            print(
+                # number rows on friendly waters board
+                f'{str(index) + " |":3s}',
+                # print row by row with 3 spaces between
+                ''.join(f'{str(x):3s}' for x in row[0]),
+                # separate the two boards by 9 spaces
+                ' ' * 9,
+                # number rows on enemy waters board
+                f'{str(index) + " |" :3s}',
+                # print row by row with 3 spaces between
+                ''.join(f'{str(x):3s}' for x in row[1]),
+            )
+        print("\n")
 
     def build_ships():
