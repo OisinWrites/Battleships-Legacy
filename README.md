@@ -58,6 +58,13 @@ starting coords.
 - Outline the functions needed in the file, and their behaviour.
 ## Utilities
 - Outline functions help in utilities class to be called on throughout other classes.
+- Added all functions for utilities with validation methods.
+ 1. Name input
+ 2. Size of board input
+ 3. Duplicate checks
+ 4. Coordinates validator
+ 5. Error message
+ 6. Clear display
 
 # Testing
 
