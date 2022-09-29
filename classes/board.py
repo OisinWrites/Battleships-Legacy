@@ -183,3 +183,15 @@ class Board:
                         ship.coordinates = temp_ship
                         placement_process = False
                         return ship.coordinates
+
+                # If any tile in the process is occupied a new start coordinate
+                # is requested/generated and the process starts again
+                else:
+                    ship.start_coordinate = (
+                        random.randint(
+                            0, self.size-1), random.randint(
+                            0, self.size-1))
+                    ship.direction = random.choice(["r", "d"])
+                    break
+
+        return ship.coordinates
