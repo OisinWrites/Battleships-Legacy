@@ -19,6 +19,9 @@ class Carrier(Ship):
     that the Carrier class can use it as an argument,
     giving this class inheritance of the former.
     """
-    name = "Carrier"
-    length = 5
-    symbol_list = ["C"] * length
+    def __init__(self, start_coordinate, direction, coordinates, identifier):
+        super().__init__(start_coordinate, direction, coordinates, identifier)
+        self.name = "Carrier"
+        self.length = 5
+        self.symbol_list = ["C"] * self.length
+        self.identifier_symbols = str(identifier) * self.length
