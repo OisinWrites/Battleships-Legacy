@@ -51,8 +51,8 @@ class Game:
         """"
         Takes player name and creates player and computer objects.
         """
-        user = utilities.name_input()
-        size = utilities.size_input()
+        user = classes.utilities.name_input()
+        size = classes.utilities.size_input()
         user = Player(user, size)
         computer = Player("Computer", size)
         self.play_game(user, computer)
@@ -107,5 +107,5 @@ class Game:
         """
         del (player1)
         del (player2)
-        utilities.clear_display()
+        classes.utilities.clear_display()
         self.welcome_screen()
