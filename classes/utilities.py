@@ -45,6 +45,14 @@ def name_input():
 
 def duplicate_tile_check():
     # Checks if tile is already occupied
+    for list in occupied_tiles:
+        for _ in list:
+            if next_tile in list:
+                return True
+            elif ship.start_coordinate in list:
+                return True
+
+
 def coord_input_validator():
     # Validates coordinates, and returns errpr msg function if not
 def coord_error_msg():
