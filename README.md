@@ -30,6 +30,11 @@ I want to be able to place my own ships both manually and automatically.
         6. Initate game function through run.py file.
 - Create a ship class and add docstring explaining its objects.
 - Create only the 'Carrier' class for now, with explaination of its objects.
+- A lot of work done on Boards. So far it does three things:
+    - Create an instance of a board for player and computer
+    - Print this to the terminal for user to see
+    - Define boards by handling them as coordinates inside arrays
+    All this is done within a scalable frame, allowing for user input of board size
 # Errors
 
 # Testing
