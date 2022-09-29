@@ -96,3 +96,11 @@ def coord_error_msg():
 def clear_display():
     # Clears console. Handles for different operating systems thanks
     # to import os
+    """"
+    Clears the console
+    """
+    command = 'clear'
+    if os.name in (
+            'nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    os.system(command)
