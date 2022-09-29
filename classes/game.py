@@ -58,7 +58,7 @@ class Game:
         computer = Player("Computer", size)
         self.play_game(user, computer)
 
-    def play_game():
+    def play_game(self, player, computer):
         """
         Initites the turn functions established in player class.
         Checks for game end conditions and give player a way to exit the game.
