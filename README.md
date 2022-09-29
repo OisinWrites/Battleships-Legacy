@@ -16,6 +16,19 @@ I want to be able to place my own ships both manually and automatically.
 5. Allow the player to set the board size.
 6. Automatically scale the number of ships for players based on board size.
 
+# Build Log
+- Python essntials template added.
+- Python files for each class created and defined.
+- Nesting order between classes established in doc string.
+- README file intiated with user stories, features to be included, Build Log, Error, Testing, and Deployment headers. Deployment content completed.
+- Create a minimal viable product version first. Use one ship, random only not manual placement of ships, maybe without error handling yet, or win conditions. Test deployment on Heroku.
+        1. Establish ship class
+        2. Give one ship subclass its objects
+        3. Define what is a board and pass through the ship subclass
+        4. Define the players and pass through the board
+        5. Define the game structure and pass through player
+        6. Initate game function through run.py file.
+
 # Errors
 
 # Testing
