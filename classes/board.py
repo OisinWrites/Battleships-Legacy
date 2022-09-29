@@ -12,7 +12,7 @@ randomisation. It will call on the untilities class
 to use the functions to clear the display, and
 to verify that guesses are not being repeated.
 Board calls on each subclass of ship;
-carrier, destroyer, frigate, patrol, and submarine.
+carrier, frigate, patrol, and submarine.
 """
 import random
 import classes.utilities
@@ -117,7 +117,6 @@ class Board:
         """
         ship_types = [
             Carrier,
-            Destroyer,
             Frigate,
             Patrol,
             Submarine
