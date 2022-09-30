@@ -20,7 +20,7 @@ from .submarine import Submarine
 from .carrier import Carrier
 from .frigate import Frigate
 from .patrol import Patrol
-import sounds
+import classes.sounds
 
 
 class Board:

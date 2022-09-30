@@ -13,7 +13,7 @@ the function of validating coordinates.
 from .board import Board
 import random
 import classes.utilities
-import sounds
+import classes.sounds
 
 
 class Player:
