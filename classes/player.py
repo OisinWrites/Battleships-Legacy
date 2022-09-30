@@ -97,6 +97,15 @@ class Player:
                         "could be hiding?\n"
                          )
                     continue
+                elif valid_coord is False:
+                    print(
+                        "But Captain that would target the coast! \n"
+                        "What if we hit civilians!? \n"
+                        "Perhaps I misheard you?? \n"
+                        "(reenter valid coordinates "
+                        "within knot range of the coast.)"
+                    )
+                    continue
                 else:
                     self.board.display()
                     self.previous_guesses.append(guess_coordinate)
