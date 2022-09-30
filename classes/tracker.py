@@ -127,6 +127,7 @@ class Tracker:
         return False
 
     def change_direction(self):
+        # repeats of change direction on already guessed.
         possible_directions = set(
             ["r", "l", "d", "u"]) ^ set(self.directions_tried)
         if len(possible_directions) > 0:

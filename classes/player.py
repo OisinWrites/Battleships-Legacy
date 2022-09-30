@@ -102,8 +102,23 @@ class Player:
         guess = self.make_guess()
         # classes.sounds.play_missile_launch()
         guess_hit_check = opponent.board.guess_checker(guess)
+        sunk_ship = opponent.board.check_last_hit_sunk()
+
         if (guess_hit_check is True) & (self.name == "Computer"):
-            print(guess_hit_check)
+            if sunk_ship is True:
+                self.tracker = None
+            else:
+                if self.tracker is None:
+                    self.tracker = Tracker(
+                        guess, self.size, self.previous_guesses)
+                else:
+                    self.tracker.update_hit(guess)
+        else:
+            if self.tracker is not None:
+                if self.tracker.has_valid_hit() is True:
+                    self.tracker.change_direction()
+                else:
+                    self.tracker = None
         self.board.update_board(guess, guess_hit_check, opponent)
         if self.name != "Computer":
             self.board.display()
