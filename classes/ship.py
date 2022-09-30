@@ -1,9 +1,11 @@
+"""
+Creates share properties of the ship class
+which used by the subclasses to initialise
+a ship object.
+"""
+
+
 class Ship:
-    """
-    Creates share properties of the ship class
-    which used by the subclasses to initialise
-    a ship object.
-    """
     def __init__(self, start_coordinate, direction, coordinates, identifier):
         """
         Each ship on intialisation of its instance must establish its

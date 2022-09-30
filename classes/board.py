@@ -8,7 +8,7 @@ guesses, and the computer's ships are hidden.
 
 Board will import random to give the program
 the ability to give the computer's guesses
-randomisation. It will call on the untilities class
+randomisation. It will call on the utilities class
 to use the functions to clear the display, and
 to verify that guesses are not being repeated.
 Board calls on each subclass of ship;
