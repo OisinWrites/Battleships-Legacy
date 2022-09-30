@@ -46,6 +46,7 @@ class Game:
         while options_menu:
             options = input('Hit enter to begin')
             options_menu = False
+            classes.utilities.clear_display()
             self.create_players()
 
     def create_players(self):
@@ -74,6 +75,13 @@ class Game:
                 print("Captain, we've won! With your infallible"
                       "battle strategy how could we have not succeeded?")
                 input("Hit enter to voyage home.").strip(" ")
+                self.restart_game(player, computer)
+                break
+            game_over = player.out_of_guesses()
+            if game_over is True:
+                print("You lose.",
+                      "You used all your guesses without sinking all the computers ships")
+                input("Hit any key to continue").strip(" ")
                 self.restart_game(player, computer)
                 break
             # offer human player a way to quit the round.

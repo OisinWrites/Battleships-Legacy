@@ -153,6 +153,12 @@ starting coords.
         Methods: White out code relating to sound with #.
         Results: Currently continuing without sound.
 
+        ### Remaining Errors
+        Error: Tile validation error, ships are being placed over one another.
+        Methods: 
+
+        Error: Game end conditions aren't triggering.
+
 # Deployment
     ## Deploying to Heroku
     1 Create an account with Heroku, and navigate to the main page by clicking on "Heroku" at top left of screen.
