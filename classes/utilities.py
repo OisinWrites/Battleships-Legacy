@@ -116,7 +116,7 @@ def direction_input():
             return "v"
         else:
             print("Not a valid input please only type 'h' or 'v'\n"
-                   "(Letter casing does not matter):')"
+                   "(Letter casing does not matter):")
 
 
 def coord_error_msg():

@@ -34,7 +34,7 @@ class Board:
     and show the player's ship locations.
     """
 
-    def __init__(self, size, user):
+    def __init__(self, size, user, manual_placement=False):
         """
         Each instance of a board needs to take in its
         adjustable size, which will be set by the player,
@@ -48,6 +48,7 @@ class Board:
         self.last_hit_sunk_ship = False
         self.size = size
         self.user = user
+        self.manual_placement = manual_placement
         self.number_of_ships = int((size//2) + 1)
         self.number_of_ships_remaining = self.number_of_ships
         self.number_of_ships_per_category = int(self.number_of_ships / 5)
@@ -133,6 +134,7 @@ class Board:
                 self.display()
                 start_position = input(
                     f"From where would you like your ship "
+                      # pep8 disagrees with git lint
                       "to start?\n"
                       "\nPlease enter two numbers (row then column)\n"
                       "i.e 4,5 or 45: \n").strip(" ")
