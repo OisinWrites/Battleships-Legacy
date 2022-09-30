@@ -37,6 +37,30 @@ class Player:
         self.turns_available = int(size * size * .8)
         self.board = Board(size, name)
         self.previous_guesses = []
+        if self.name == 'Computer':
+            self.board = Board(size, name)
+        else:
+            manual_placement = self.manual_placement_check()
+            self.board = Board(size, name, manual_placement)
+        self.previous_guesses = []
+
+    @staticmethod
+    def manual_placement_check():
+        """"
+        Asks human player if they wish to set the ships up manually
+        or use the quick start feature.
+        """
+        invalid_input = True
+        while invalid_input:
+            setup_type = input(
+                'Type "(M)anual" to place your ships '
+                'yourself\nOtherwise hit any key').lower().strip(" ")
+            if setup_type == "manual" or setup_type == "m":
+                invalid_input = False
+                return True
+            else:
+                invalid_input = False
+                return False
 
     def make_guess(self):
         """
