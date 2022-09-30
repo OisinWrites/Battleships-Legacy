@@ -266,6 +266,16 @@ class Board:
         if ship.number_of_damaged_tiles == ship.length:
             self.sink_ship()
 
+    def update_sunk_ships(self, opponent):
+        for i in range(self.number_of_ships):
+            ship = self.ships[i]
+            if ship.is_sunk is True:
+                coords = ship.coordinates
+                for coord in coords:
+                    self.ship_board[coord[0]][coord[1]] = '\U0001F525'
+                    opponent.board.guess_board[
+                        coord[0]][coord[1]] = '\U0001F525'
+
     def update_board(self, guess, result, opponent):
         """"
         Updates Board with latest hit or miss.
