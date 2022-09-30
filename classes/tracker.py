@@ -113,3 +113,15 @@ class Tracker:
         self.previous_guesses.append(guess_coordinate)
         self.hit_sequence.clear()
         self.hit = None
+
+    def change_direction_on_already_guessed(self):
+        # matches set against set to leave remaining untried directions
+        possible_directions = set(["r", "l", "d", "u"]) ^ set(
+                                  self.directions_tried)
+        # randomises selection between remaining directions and adds
+        # the chosen direction to list of those already tried.
+        if len(possible_directions) > 0:
+            self.direction = random.choice(list(possible_directions))
+            self.directions_tried.append(self.direction)
+            return True
+        return False
