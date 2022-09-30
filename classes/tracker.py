@@ -114,7 +114,7 @@ class Tracker:
         self.hit_sequence.clear()
         self.hit = None
 
-    def change_direction_on_already_guessed(self):
+    def change_direction(self):
         # matches set against set to leave remaining untried directions
         possible_directions = set(["r", "l", "d", "u"]) ^ set(
                                   self.directions_tried)
@@ -125,14 +125,6 @@ class Tracker:
             self.directions_tried.append(self.direction)
             return True
         return False
-
-    def change_direction(self):
-        # repeats of change direction on already guessed.
-        possible_directions = set(
-            ["r", "l", "d", "u"]) ^ set(self.directions_tried)
-        if len(possible_directions) > 0:
-            self.direction = random.choice(list(possible_directions))
-            self.directions_tried.append(self.direction)
 
     def valid_tile(self, guess):
         row = guess[0]

@@ -13,6 +13,7 @@ the function of validating coordinates.
 from .board import Board
 import random
 import classes.utilities
+from classes.tracker import Tracker
 # import classes.sounds
 
 
@@ -30,6 +31,7 @@ class Player:
         random guess function, rather than just human error.
         """
 
+        self.tracker = None
         self.name = name
         self.size = size
         self.turns_available = int(size * size * .8)
@@ -50,10 +52,20 @@ class Player:
             # begins loop to create valid guess of coordinates
             if self.name == "Computer":
                 # gives computer random choice to create tuple of coords
-                guess_coordinate = (
-                    random.randint(
-                        0, self.board.size - 1), random.randint(
-                        0, self.board.size - 1))
+                # call on tracker mode
+                if self.tracker is None:
+                    guess_coordinate = (
+                        random.randint(
+                            0, self.board.size-1), random.randint(
+                            0, self.board.size-1))
+                else:
+                    if self.tracker.has_valid_hit():
+                        guess_coordinate = self.tracker.get_guess()
+                    else:
+                        guess_coordinate = (
+                            random.randint(
+                                0, self.board.size - 1), random.randint(
+                                0, self.board.size - 1))
                 # checks if random guess has been made already
                 previously_guessed = guess_coordinate in self.previous_guesses
                 # repeats loop if guess was made already until new guess made
@@ -119,6 +131,7 @@ class Player:
                     self.tracker.change_direction()
                 else:
                     self.tracker = None
+        # marks boards with results
         self.board.update_board(guess, guess_hit_check, opponent)
         if self.name != "Computer":
             self.board.display()
