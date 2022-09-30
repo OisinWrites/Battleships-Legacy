@@ -125,3 +125,31 @@ class Tracker:
             self.directions_tried.append(self.direction)
             return True
         return False
+
+    def change_direction(self):
+        possible_directions = set(
+            ["r", "l", "d", "u"]) ^ set(self.directions_tried)
+        if len(possible_directions) > 0:
+            self.direction = random.choice(list(possible_directions))
+            self.directions_tried.append(self.direction)
+
+    def valid_tile(self, guess):
+        row = guess[0]
+        column = guess[1]
+
+        if (row < 0) | (row >= self.size) | (
+                        column < 0) | (column >= self.size):
+            self.change_direction()
+            return False
+
+        return True
+
+    def update_hit(self, hit):
+        self.hit = hit
+        self.hit_sequence.append(hit)
+
+    def has_valid_hit(self):
+        # toggles if is in tracker mode
+        if self.hit is None:
+            return False
+        return True

@@ -79,7 +79,9 @@ class Game:
             # offer human player a way to quit the round.
             user_input = input(
                             "Hit R and enter for a tactical retreat to the \n"
-                            "Welcome Screen \n").strip(" ")
+                            "welcome Screen or\n"
+                            "hit enter to stand your ground! \n"
+                              ).strip(" ")
             if user_input.lower() == "R":
                 self.restart_game(player, computer)
                 break
