@@ -100,6 +100,25 @@ def coordval(user_input):
             user_input = coord_error_msg()
 
 
+def direction_input():
+
+    invalid_input = True
+    while invalid_input:
+        ship_direction = input(
+            "From the back of the boat, to which direction is the front "
+            "end pointing?\nTo the (h)orizontal or (v)ertical: \n"
+        ).lower().strip(" ")
+        if ship_direction == "right" or ship_direction == "h":
+            invalid_input = False
+            return "h"
+        elif ship_direction == "down" or ship_direction == "v":
+            invalid_input = False
+            return "v"
+        else:
+            print("Not a valid input please only type 'h' or 'v'\n"
+                   "(Letter casing does not matter):')"
+
+
 def coord_error_msg():
     # Error message to retry entering coords
     """"

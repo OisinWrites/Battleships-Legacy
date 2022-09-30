@@ -128,28 +128,27 @@ class Board:
 
         ship_type_index = 0
         for i in range(self.number_of_ships):
-            # chooses random number between 0 and board size.
-            random_start = (random.randint(0, self.size-1),
-                            random.randint(0, self.size-1))
-            # chooses random direction between vertical and horizontal.
-            random_direction = random.choice(["v", "h"])
+
+            if self.manual_placement:
+                self.display()
+                start_position = input(
+                    f"From where would you like your ship "
+                      "to start?\n"
+                      "\nPlease enter two numbers (row then column)\n"
+                      "i.e 4,5 or 45: \n").strip(" ")
+
+                start_position = utilities.coord_input_validator(
+                    start_position)
+                direction = utilities.direction_input()
+
+            else:
+                start_position = (
+                    random.randint(
+                        0, self.size-1), random.randint(0, self.size-1))
+                direction = random.choice(["h", "v"])
 
             ship_instance = ship_types[ship_type_index](
-                random_start, random_direction, [], i)
-
-            self.build_ship(ship_instance, ships_coordinates)
-            ships_coordinates.append(ship_instance.coordinates)
-
-            self.initial_placement(ship_instance)
-
-            ships.append(ship_instance)
-            ship_type_index = ship_type_index + 1
-            if ship_type_index == len(ship_types):
-                ship_type_index = 0
-
-        if self.user != "Computer":
-            self.display()
-        return ships
+                start_position, direction, [], i)
 
     def build_ship(self, ship, occupied_tiles):
         """
