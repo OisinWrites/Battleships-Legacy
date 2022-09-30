@@ -60,7 +60,7 @@ def duplicate_tile_check(ship, occupied_tiles, next_tile):
                 return True
 
 
-def coord_input_validator(user_input):
+def coordval(user_input):
     # Validates coordinates, and returns error msg function if not
     # Handles different acceptable input formats e.g. 34 & 3,4.
     valid_input = False

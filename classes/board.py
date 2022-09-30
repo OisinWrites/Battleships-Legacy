@@ -236,7 +236,7 @@ class Board:
         if self.user != "Computer":
             for i in range(ship.length):
                 self.ship_board[ship.coordinates[i][0]
-                ][ship.coordinates[i][1]] = ship.symbol_list[i]
+                                ][ship.coordinates[i][1]] = ship.symbol_list[i]
 
     def guess_checker(self, guess):
         """

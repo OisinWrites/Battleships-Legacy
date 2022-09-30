@@ -56,7 +56,7 @@ class Player:
                 # repeats loop if guess was made already until new guess made
                 if previously_guessed:
                     continue
-                # adds guess tp list of made guesses and then makes guess valid
+                # adds guess to list of made guesses and then makes guess valid
                 # for return
                 self.previous_guesses.append(guess_coordinate)
                 valid_guess = True
@@ -64,22 +64,21 @@ class Player:
                 # when name is not computer, it is the player's guess
                 # prompts input from player for coordinates
                 guess_coordinate = input(
-                    'Select coordinates for'
-                    f'missile launch, Captain {self.user}!'
+                    'Select coordinates for\n'
+                    'missile launch, Captain!\n'
                     '(e.g. 3,4 or 34: ) \n'
                 ).strip(" ")
 
-                guess_coordinate = classes.utilities.coord_input
-                _validator(guess_coordinate)
+                guess_coordinate = classes.utilities.coordval(guess_coordinate)
                 previously_guessed = guess_coordinate in self.previous_guesses
 
                 if previously_guessed:
                     print(
                         f"But Captain {self.user}, we've already"
-                        "hit that location, we haven't missiles to spare!"
-                        "Surely there's another location the enemy"
-                        "could be hiding?"
-                    )
+                        "\n hit that location, we haven't missiles to spare\n!"
+                        "Surely there's another location the enemy\n"
+                        "could be hiding?\n"
+                         )
                     continue
                 else:
                     self.board.display()
