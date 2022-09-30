@@ -2,24 +2,24 @@ from playsound import playsound
 
 
 def play_waves():
-    test = 0
+    playsound('utils/sounds/audio/ocean.wav')
 
 
 def play_missile_launch():
-    test = 0
+    playsound('utils/sounds/audio/underwater-missile.wav')
 
 
 def play_missile_hit():
-    test = 0
+    playsound('utils/sounds/audio/sea-explosion.wav')
 
 
 def play_missile_miss():
-    test = 0
+    playsound('utils/sounds/audio/splash.wav')
 
 
 def play_ship_explosion():
-    test = 0
+    playsound('utils/sounds/audio/ship-explode.wav')
 
 
 def play_ship_sink():
-    test = 0
+    playsound('utils/sounds/audio/ship-sinking.wav')

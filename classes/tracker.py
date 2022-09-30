@@ -74,3 +74,42 @@ class Tracker:
             valid_guess = True
 
         return next_guess
+
+    def try_to_return_to_beginning_of_hit_sequence(self):
+        """
+        If the computer has established a subsequent hit,
+        but hasn't sunk the ship then this function is called on
+        to try to run the function to bring it to the original hit.
+        """
+        if len(self.hit_sequence) > 1:
+            self.return_to_beginning_of_hit_sequence()
+        else:
+            self.get_random_guess()
+
+    def return_to_beginning_of_hit_sequence(self):
+        self.hit = self.hit_sequence[0]
+        self.directions_tried.clear()
+        self.direction = random.choice(["r", "l", "d", "u"])
+        self.directions_tried.append(self.direction)
+        self.hit_sequence.clear()
+        self.hit_sequence.append(self.hit)
+
+    def get_random_guess(self):
+        # repeat of random guess function
+        valid_guess = False
+        while not valid_guess:
+
+            guess_coordinate = (
+                    random.randint(
+                        0, self.size - 1), random.randint(
+                        0, self.size - 1))
+
+            previously_guessed = guess_coordinate in self.previous_guesses
+            if previously_guessed:
+                continue
+            valid_guess = True
+
+        self.directions_tried.clear()
+        self.previous_guesses.append(guess_coordinate)
+        self.hit_sequence.clear()
+        self.hit = None
