@@ -55,6 +55,7 @@ class Game:
         """
         user = classes.utilities.name_input()
         size = classes.utilities.size_input()
+
         user = Player(user, size)
         computer = Player("Computer", size)
         self.play_game(user, computer)
