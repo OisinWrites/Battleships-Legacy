@@ -50,7 +50,7 @@ class Tracker:
             """
             previously_guessed = next_guess in self.previous_guesses
             if previously_guessed:
-                changed_direction = self.change_direction_on_duplicate()
+                changed_direction = self.change_direction()
 
                 if changed_direction is True:
                     next_guess = self.hit
