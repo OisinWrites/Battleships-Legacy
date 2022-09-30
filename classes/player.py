@@ -31,7 +31,7 @@ class Player:
 
         self.name = name
         self.size = size
-        self.size = user
+        self.user = user
         self.turns_available = int(size * size * .8)
         self.board = Board(size, name)
         self.previous_guesses = []
