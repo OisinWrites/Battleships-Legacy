@@ -99,22 +99,21 @@ def coordval(user_input):
 def coord_error_msg():
     # Error message to retry entering coords
     """"
-    Advices input is invalid,
+    Advises input is invalid,
     Requests new input and offers guidance on
     what qualifies as a valid input
     """
-    new_guess = input(f"Captain {name}, my tinnitus must be affecting"
+    new_guess = input(f"Captain {self.name}, my tinnitus must be affecting"
                       "my hearing again. Surely you meant to target"
                       "coordinates in the sea?"
-                      "(e.g. 4,5 or 45): \n").strip(" ")
+                      "(e.g. 4,3 or 43): \n").strip(" ")
     return new_guess
 
 
 def clear_display():
-    # Clears console. Handles for different operating systems thanks
-    # to import os
-    """"
-    Clears the console
+    """
+    Clears console. Handles for different operating systems thanks
+    to import os
     """
     command = 'clear'
     if os.name in (

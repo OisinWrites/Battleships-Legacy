@@ -141,7 +141,11 @@ starting coords.
 
         Error: Line 72 of player too long for pep8. Can't figure how to break line without breaking code.
         Methods: Running through pep8 lint for solution.
-        Results:
+                - changed def to a shorter name.
+        Results: pep 8 standards upheld.
+
+        Error: Game breaking when a guess is made outside of the board.
+        Methods: 
 
 # Deployment
     ## Deploying to Heroku

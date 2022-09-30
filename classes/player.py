@@ -16,7 +16,7 @@ import classes.utilities
 
 
 class Player:
-    def __init__(self, name, size, user):
+    def __init__(self, name, size):
         """
         An instance of a player takes in the name given
         by user input, or otherwise 'Computer'. It also
@@ -31,7 +31,6 @@ class Player:
 
         self.name = name
         self.size = size
-        self.user = user
         self.turns_available = int(size * size * .8)
         self.board = Board(size, name)
         self.previous_guesses = []
@@ -79,7 +78,7 @@ class Player:
 
                 if previously_guessed:
                     print(
-                        f"But Captain {self.user}, we've already"
+                        f"But Captain {self.name}, we've already"
                         "\n hit that location, we haven't missiles to spare\n!"
                         "Surely there's another location the enemy\n"
                         "could be hiding?\n"
