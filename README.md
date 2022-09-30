@@ -159,6 +159,35 @@ starting coords.
 
         Error: Game end conditions aren't triggering.
 
+# Validation
+Ran code from all files through PEP8 linter
+1. Board
+-![](docs/board-validation.png)
+2. Carrier
+-![](docs/carrier-validation.png)
+3. Frigate
+-![](docs/frigate-validation.png)
+4. Game
+-![](docs/game-validation.png)
+5. Patrol
+-![](docs/patrol-validation.png)
+6. Player
+-![](docs/player-validation.png)
+7. Run
+-![](docs/run-validation.png)
+8. Ship
+-![](docs/ship-validation.png)
+9. Sound
+- Note linter complained about hyphenation in sound file naming,
+misunderstanding them as minuses and requesting spaces around them.
+-![](docs/sound-validation.png)
+10. Submarine
+-![](docs/submarine-validation.png)
+11. Tracker
+-![](docs/tracker-validaiton.png)
+12. Utilities
+-![](docs/utilities-validation.png)
+
 # Deployment
     ## Deploying to Heroku
     1 Create an account with Heroku, and navigate to the main page by clicking on "Heroku" at top left of screen.
