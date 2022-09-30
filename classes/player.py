@@ -16,7 +16,7 @@ import classes.utilities
 
 
 class Player:
-    def __init__(self, name, size):
+    def __init__(self, name, size, user):
         """
         An instance of a player takes in the name given
         by user input, or otherwise 'Computer'. It also
@@ -28,8 +28,10 @@ class Player:
         guess coordinates, especially against the computers
         random guess function, rather than just human error.
         """
+
         self.name = name
         self.size = size
+        self.size = user
         self.turns_available = int(size * size * .8)
         self.board = Board(size, name)
         self.previous_guesses = []
