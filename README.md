@@ -146,6 +146,12 @@ starting coords.
 
         Error: Game breaking when a guess is made outside of the board.
         Methods: 
+        Results:
+
+        Error: Heroku unable to play sounds, asks to install pygobjet
+        Terminal in gitpod doesn't recognise 'pip install pygobject' command.
+        Methods: White out code relating to sound with #.
+        Results: Currently continuing without sound.
 
 # Deployment
     ## Deploying to Heroku
