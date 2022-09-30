@@ -13,6 +13,7 @@ the function of validating coordinates.
 from .board import Board
 import random
 import classes.utilities
+import sounds
 
 
 class Player:
@@ -99,6 +100,7 @@ class Player:
         """
         print(f"{self.name}'s turn")
         guess = self.make_guess()
+        sounds.play_missile_launch()
         guess_hit_check = opponent.board.guess_checker(guess)
         if (guess_hit_check is True) & (self.name == "Computer"):
             print(guess_hit_check)

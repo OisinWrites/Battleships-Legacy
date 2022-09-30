@@ -20,6 +20,7 @@ from .submarine import Submarine
 from .carrier import Carrier
 from .frigate import Frigate
 from .patrol import Patrol
+import sounds
 
 
 class Board:
@@ -279,6 +280,7 @@ class Board:
             else:
                 opponent.board.display()
             print(f"SPLASH!!! {self.user} missed")
+            sounds.play_missile_miss()
 
         else:
             # hit uses unicode for collision emoji
@@ -297,7 +299,8 @@ class Board:
         Reduces number of ships by one.
         """
         print(f"{self.user} destroyed a ship!!")
-
+        sounds.play_ship_explosion()
+        sounds.play_ship_sink()
         self.number_of_ships -= 1
         self.last_hit_sunk_ship = True
         return self.number_of_ships

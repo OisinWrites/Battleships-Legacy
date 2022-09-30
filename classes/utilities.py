@@ -20,13 +20,13 @@ def size_input():
     valid_size = False
     while not valid_size:
         size = input("How many knots from the coast will \n"
-                     "we engage the enemy, 4, 8, or 10?\n")
+                     "we engage the enemy, 8, or 10?\n")
         if len(size.strip(" ")) == 0:
             print("Surely we haven't run aground?\n")
             continue
-        if (int(size) != 4) & (int(size) != 8) & (int(size) != 10):
+        if (int(size) != 8) & (int(size) != 10):
             print("We can't be looking at the same sea!? \n"
-                  "Valid Options are 4, 8 or 10. \n")
+                  "Valid Options are 8 or 10. \n")
             continue
 
         return int(size)
