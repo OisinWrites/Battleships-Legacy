@@ -300,6 +300,12 @@ class Board:
         self.number_of_ships -= 1
         return self.number_of_ships
 
+    def check_last_hit_sunk(self):
+        """
+        Called to give quality of ship being fully destroyed.
+        """
+        return self.last_hit_sunk_ship
+
     def are_all_ships_sunk(self):
         if self.number_of_ships_remaining == 0:
             return True

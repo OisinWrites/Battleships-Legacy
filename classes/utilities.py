@@ -19,13 +19,14 @@ def size_input():
     # Take and validate size
     valid_size = False
     while not valid_size:
-        size = input("How many knots from the coast will"
+        size = input("How many knots from the coast will \n"
                      "we engage the enemy, 4, 8, or 10?\n")
         if len(size.strip(" ")) == 0:
             print("Surely we haven't run aground?\n")
             continue
         if (int(size) != 4) & (int(size) != 8) & (int(size) != 10):
-            print("Invalid board size. Valid Options are 4, 8 or 10. \n")
+            print("Wecan't be looking at the same sea!? \n"
+                  "Valid Options are 4, 8 or 10. \n")
             continue
 
         return int(size)
@@ -37,8 +38,8 @@ def name_input():
     while not valid_name:
         name = input("To whom do we report, sir?\n")
         if len(name.strip(" ")) == 0:
-            print("Apologies sir, the missiles have left me half deaf."
-                  "Could you repeat that, please?")
+            print("Apologies sir, the missiles have left me hard of hearing."
+                  "\nCould you repeat that, please?")
             continue
 
         elif name.lower() == "computer":

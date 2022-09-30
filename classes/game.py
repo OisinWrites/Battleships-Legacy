@@ -90,11 +90,12 @@ class Game:
             self.display_stats(player, computer)
             if game_over is True:
                 self.display_both_boards(player, computer)
-                print("We've lost Captain, all vessels are scuppered.")
+                print("We've lost Captain, all vessels are scuppered. \n")
                 input("Hit enter to surrender..").strip(" ")
                 self.restart_game(player, computer)
                 break
 
+    @staticmethod
     def display_stats(player, computer):
         print(player.name +
               " has " + str(player.turns_available) + " guesses left")

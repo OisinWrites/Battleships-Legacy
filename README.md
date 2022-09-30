@@ -139,7 +139,9 @@ starting coords.
                 - Added i as int in list of arguments.
         Results: New error.
 
-        Error: 
+        Error: Line 72 of player too long for pep8. Can't figure how to break line without breaking code.
+        Methods: Running through pep8 lint for solution.
+        Results:
 
 # Deployment
     ## Deploying to Heroku

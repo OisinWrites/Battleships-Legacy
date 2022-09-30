@@ -30,6 +30,7 @@ class Player:
         """
         self.name = name
         self.size = size
+        self.turns_available = int(size * size * .8)
         self.board = Board(size, name)
         self.previous_guesses = []
 
@@ -104,3 +105,12 @@ class Player:
 
         else:
             opponent.board.display()
+
+        self.turns_available = self.turns_available - 1
+        """
+        Give player a turn limit
+    """
+    def out_of_guesses(self):
+        if self.turns_available == 0:
+            return True
+        return False
