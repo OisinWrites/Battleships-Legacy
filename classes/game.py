@@ -100,11 +100,11 @@ class Game:
         print(player.name +
               " has " + str(player.turns_available) + " guesses left")
         print("Computer has "
-              + str(computer.board.number_of_ships_remaining) + " of",
-              str(computer.board.number_of_ships) + " ships left")
+              + str(computer.board.number_of_ships) + " of",
+              str(computer.board.number_of_ships_remaining) + " ships left")
         print(player.name + " has "
-              + str(player.board.number_of_ships_remaining) + " of",
-              str(player.board.number_of_ships) + " ships left \n")
+              + str(player.board.number_of_ships) + " of",
+              str(player.board.number_of_ships_remaining) + " ships left \n")
 
     def display_both_boards(self, player, computer):
         """

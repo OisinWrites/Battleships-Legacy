@@ -19,7 +19,7 @@ I want to be able to place my own ships both manually and automatically.
 # Build Log
 
 ## Initialising Repository Setup
-- Python essntials template added.
+- Python essentials template added.
 - Python files for each class created and defined.
 - Nesting order between classes established in doc string.
 - README file intiated with user stories, features to be included, Build Log, Error, Testing, and Deployment headers. Deployment content completed.
