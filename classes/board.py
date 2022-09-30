@@ -133,7 +133,7 @@ class Board:
             random_direction = random.choice(["v", "h"])
 
             ship_instance = ship_types[ship_type_index](
-                random_start, random_direction, [])
+                random_start, random_direction, [], i)
 
             self.build_ship(ship_instance, ships_coordinates)
             ships_coordinates.append(ship_instance.coordinates)
@@ -180,7 +180,7 @@ class Board:
                     )
                     index_to_increment = 1
 
-                duplicate_tile = utilities.duplicate_tile_check(
+                duplicate_tile = classes.utilities.duplicate_tile_check(
                     ship, occupied_tiles, next_tile)
 
                 # Check if ship will go over the board edge

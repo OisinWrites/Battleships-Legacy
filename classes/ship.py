@@ -4,7 +4,7 @@ class Ship:
     which used by the subclasses to initialise
     a ship object.
     """
-    def __init__(self, start_coordinate, direction, coordinates):
+    def __init__(self, start_coordinate, direction, coordinates, identifier):
         """
         Each ship on intialisation of its instance must establish its
         starting point: the primary coordinates,
@@ -23,4 +23,5 @@ class Ship:
         self.direction = direction
         self.coordinates = coordinates
         self.number_of_damaged_tiles = 0
+        self.identifier = identifier
         self.is_sunk = False

@@ -126,8 +126,20 @@ starting coords.
         Results: Progressed to next error.
 
         Error: # symbol used for board building, error reports requires int.
-        Methods: Subbed in 0
-        Results: 
+        Methods: Subbed in 0. Failed.
+                - (size) needed to be declared as an int after the return
+                function of the validator loop in the utilities class.
+        Results: Progresses to next error.
+
+        Error: The ship subclasses are now create their own instances with init function. They are identified per instances instead of their type and symbol.
+        Local terminal "attempted relative import with no know parent package"
+        Heroku terminal "missing 1 positional arguement: 'identifier'.
+        Methods: I'm going to give the parent class the identifier object.
+                - Removed line break that for the pep8 standards to see if it was breaking the code. Failed and restructured for pep8.
+                - Added i as int in list of arguments.
+        Results: New error.
+
+        Error: 
 
 # Deployment
     ## Deploying to Heroku
