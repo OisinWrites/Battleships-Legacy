@@ -72,7 +72,7 @@ class Board:
         for each board, parted by " " spaces, calculated by the 80
         character board less characters used in string.
         """
-        utilities.clear_display()
+        classes.utilities.clear_display()
         print(" " * 16 * self.number_of_ships_per_category * 2 +
               f"This is {self.user} board")
         print(" " * 4 * self.number_of_ships_per_category * 2 +
@@ -230,6 +230,13 @@ class Board:
                 dict(zip(self.ships[i].coordinates,
                          self.ships[i].symbol_list)))
         return ship_log
+
+    def initial_placement(self, ship):
+
+        if self.user != "Computer":
+            for i in range(ship.length):
+                self.ship_board[ship.coordinates[i][0]
+                ][ship.coordinates[i][1]] = ship.symbol_list[i]
 
     def guess_checker(self, guess):
         """
