@@ -231,7 +231,7 @@ class Board:
         for i in range(self.number_of_ships):
             ship_log.update(
                 dict(zip(self.ships[i].coordinates,
-                         self.ships[i].symbol_list)))
+                         str(self.ships[i].identifier_symbols))))
         return ship_log
 
     def initial_placement(self, ship):
