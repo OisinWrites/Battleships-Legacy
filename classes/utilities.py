@@ -25,7 +25,7 @@ def size_input():
             print("Surely we haven't run aground?\n")
             continue
         if (int(size) != 4) & (int(size) != 8) & (int(size) != 10):
-            print("Wecan't be looking at the same sea!? \n"
+            print("We can't be looking at the same sea!? \n"
                   "Valid Options are 4, 8 or 10. \n")
             continue
 
@@ -68,6 +68,7 @@ def check_coast(user_input, size):
     if (row < 0) | (row >= size) | (column < 0) | (column >= size):
         return False
     return True
+
 
 def coordval(user_input):
     # Validates coordinates, and returns error msg function if not

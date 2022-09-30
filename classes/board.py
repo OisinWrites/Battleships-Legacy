@@ -44,6 +44,7 @@ class Board:
         in a board of variable size, and allow for
         scalability.
         """
+        self.last_hit_sunk_ship = False
         self.size = size
         self.user = user
         self.number_of_ships = int((size//2) + 1)
@@ -298,6 +299,7 @@ class Board:
         print(f"{self.user} destroyed a ship!!")
 
         self.number_of_ships -= 1
+        self.last_hit_sunk_ship = True
         return self.number_of_ships
 
     def check_last_hit_sunk(self):
