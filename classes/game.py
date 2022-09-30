@@ -69,6 +69,7 @@ class Game:
             player.take_turn(computer)
             # checks for win returns boolean
             game_over = computer.board.are_all_ships_sunk()
+            computer.board.update_sunk_ships(player)
             # if win print and exit
             if game_over is True:
                 self.display_both_boards(player, computer)
@@ -79,8 +80,8 @@ class Game:
                 break
             game_over = player.out_of_guesses()
             if game_over is True:
-                print("You lose.",
-                      "You used all your guesses without sinking all the computers ships")
+                print("You lose. \n"
+                      "We've used up all of our missiles... \n")
                 input("Hit any key to continue").strip(" ")
                 self.restart_game(player, computer)
                 break
@@ -97,6 +98,7 @@ class Game:
             # repeats the above for the computer player
             computer.take_turn(player)
             game_over = player.board.are_all_ships_sunk()
+            player.board.update_sunk_ships(computer)
             self.display_stats(player, computer)
             if game_over is True:
                 self.display_both_boards(player, computer)
