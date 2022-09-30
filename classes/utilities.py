@@ -61,6 +61,14 @@ def duplicate_tile_check(ship, occupied_tiles, next_tile):
                 return True
 
 
+def check_coast(user_input, size):
+
+    row = user_input[0]
+    column = user_input[1]
+    if (row < 0) | (row >= size) | (column < 0) | (column >= size):
+        return False
+    return True
+
 def coordval(user_input):
     # Validates coordinates, and returns error msg function if not
     # Handles different acceptable input formats e.g. 34 & 3,4.

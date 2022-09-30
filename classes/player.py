@@ -72,6 +72,8 @@ class Player:
 
                 guess_coordinate = classes.utilities.coordval(guess_coordinate)
                 previously_guessed = guess_coordinate in self.previous_guesses
+                valid_coord = classes.utilities.check__coast(
+                              guess_coordinate, self.size)
 
                 if previously_guessed:
                     print(
