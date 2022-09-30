@@ -103,7 +103,7 @@ def coord_error_msg():
     Requests new input and offers guidance on
     what qualifies as a valid input
     """
-    new_guess = input(f"Captain {self.name}, my tinnitus must be affecting"
+    new_guess = input("Captain, my tinnitus must be affecting"
                       "my hearing again. Surely you meant to target"
                       "coordinates in the sea?"
                       "(e.g. 4,3 or 43): \n").strip(" ")
