@@ -280,7 +280,7 @@ class Board:
             else:
                 opponent.board.display()
             print(f"SPLASH!!! {self.user} missed")
-            sounds.play_missile_miss()
+            classes.sounds.play_missile_miss()
 
         else:
             # hit uses unicode for collision emoji
@@ -292,15 +292,15 @@ class Board:
 
             if self.check_last_hit_sunk() is False:
                 print(f"{self.user} made a Direct hit!")
-                sounds.play_missile_hit()
+                classes.sounds.play_missile_hit()
 
     def sink_ship(self):
         """
         Reduces number of ships by one.
         """
         print(f"{self.user} destroyed a ship!!")
-        sounds.play_ship_explosion()
-        sounds.play_ship_sink()
+        classes.sounds.play_ship_explosion()
+        classes.sounds.play_ship_sink()
         self.number_of_ships -= 1
         self.last_hit_sunk_ship = True
         return self.number_of_ships
