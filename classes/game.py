@@ -77,8 +77,9 @@ class Game:
                 self.restart_game(player, computer)
                 break
             # offer human player a way to quit the round.
-            user_input = input("Hit R and enter for a tactical retreat to the"
-                               "Welcome Screen").strip(" ")
+            user_input = input(
+                            "Hit R and enter for a tactical retreat to the \n"
+                            "Welcome Screen \n").strip(" ")
             if user_input.lower() == "R":
                 self.restart_game(player, computer)
                 break
@@ -93,6 +94,16 @@ class Game:
                 input("Hit enter to surrender..").strip(" ")
                 self.restart_game(player, computer)
                 break
+
+    def display_stats(player, computer):
+        print(player.name +
+              " has " + str(player.turns_available) + " guesses left")
+        print("Computer has "
+              + str(computer.board.number_of_ships_remaining) + " of",
+              str(computer.board.number_of_ships) + " ships left")
+        print(player.name + " has "
+              + str(player.board.number_of_ships_remaining) + " of",
+              str(player.board.number_of_ships) + " ships left \n")
 
     def display_both_boards(self, player, computer):
         """
