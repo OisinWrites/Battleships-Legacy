@@ -141,7 +141,7 @@ class Board:
 
                 start_position = classes.utilities.coord_input_validator(
                     start_position)
-                direction = utilities.direction_input()
+                direction = classes.utilities.direction_input()
 
             else:
                 start_position = (
