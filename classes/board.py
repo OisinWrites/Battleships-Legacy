@@ -134,10 +134,10 @@ class Board:
                 self.display()
                 start_position = input(
                     f"From where would you like your ship "
-                      # pep8 disagrees with git lint
-                      "to start?\n"
-                      "\nPlease enter two numbers (row then column)\n"
-                      "i.e 4,5 or 45: \n").strip(" ")
+                    # pep8 disagrees with git lint
+                    "to start?\n"
+                    "\nPlease enter two numbers (row then column)\n"
+                    "i.e 4,5 or 45: \n").strip(" ")
 
                 start_position = utilities.coord_input_validator(
                     start_position)
@@ -151,6 +151,20 @@ class Board:
 
             ship_instance = ship_types[ship_type_index](
                 start_position, direction, [], i)
+
+            self.build_ship(ship_instance, ships_coordinates)
+            ships_coordinates.append(ship_instance.coordinates)
+
+            self.initial_placement(ship_instance)
+
+            ships.append(ship_instance)
+            ship_type_index = ship_type_index + 1
+            if ship_type_index == len(ship_types):
+                ship_type_index = 0
+
+        if self.user != "Computer":
+            self.display()
+        return ships
 
     def build_ship(self, ship, occupied_tiles):
         """
