@@ -139,7 +139,7 @@ class Board:
                     "\nPlease enter two numbers (row then column)\n"
                     "i.e 4,5 or 45: \n").strip(" ")
 
-                start_position = classes.utilities.coord_input_validator(
+                start_position = classes.utilities.coordval(
                     start_position)
                 direction = classes.utilities.direction_input()
 
