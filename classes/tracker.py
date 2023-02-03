@@ -56,20 +56,14 @@ class Tracker:
                     next_guess = self.hit
                     continue
                 else:
-                    if len(self.hit_sequence) > 1:
-                        self.return_to_beginning_of_hit_sequence()
-                    else:
-                        self.get_random_guess()
+                    self.try_to_return_to_beginning_of_hit_sequence()
 
             if self.valid_tile(next_guess) is False:
                 next_guess = self.hit
                 if len(self.directions_tried) < 4:
                     continue
                 else:
-                    if len(self.hit_sequence) > 1:
-                        self.return_to_beginning_of_hit_sequence()
-                    else:
-                        self.get_random_guess()
+                    self.try_to_return_to_beginning_of_hit_sequence()
 
             valid_guess = True
 
@@ -113,6 +107,16 @@ class Tracker:
         self.previous_guesses.append(guess_coordinate)
         self.hit_sequence.clear()
         self.hit = None
+
+    # If tracker unsuccessful rldu choice, chooses alternative.
+    def change_direction_on_already_guessed(self):
+        possible_directions = set(["r", "l", "d", "u"]
+                                  ) ^ set(self.directions_tried)
+        if len(possible_directions) > 0:
+            self.direction = random.choice(list(possible_directions))
+            self.directions_tried.append(self.direction)
+            return True
+        return False
 
     def change_direction(self):
         # matches set against set to leave remaining untried directions

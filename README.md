@@ -157,6 +157,8 @@ starting coords.
         Error: Tile validation error, ships are being placed over one another.
         Methods: 
 
+        Error: Tracker for intelligent computer choices not working
+
         Error: Game end conditions aren't triggering.
 
         Error: Ship count is not reduced once full ship is successfully destroyed.
