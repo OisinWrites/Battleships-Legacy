@@ -9,12 +9,46 @@ for attacking are random up until it hits a ship, and it then tries to find the 
 I want to be able to place my own ships both manually and automatically.
 
 # Features
-1. Intelligent targeting by computer
+1. Automatically scale the number of ships for players based on board size.
 2. Allowing the player to place ships manually and automatically.
+- -![manual_choice](docs/8x8_board_size.jpg)
+- In this example the ships have been manipulated into columns, starting from the top of the board. ![manual_positioning_example](docs/manual_placement.jpg)
+
 3. Turn counter to limit player moves and enforce end condition.
+- Guesses clock down in example from 43 to 42.
+![43_turns_left](docs/guesses_left_43.jpg) ![42_turns_left](docs/guesses_left_42.jpg)
+
 4. Feedback for invalid inputs and guesses.
+- Here the user has a raise statement if the guesses is beyond the parameters of the board, or if the location was already guessed.
+![beyond_board](docs/guess_outside_of_board.jpg) ![already_guessed](docs/guessed_already.jpg)
+
 5. Allow the player to set the board size.
-6. Automatically scale the number of ships for players based on board size.
+- Currently the game allows inputs of either 8 or 10 for square playing board. Though the code has been written otherwise to attempt to be adjustable. Namely this is relevant to the guess limit counter and amount of ships in play.
+![player_board_size_choice](docs/board_size_selection.jpg) ![8_example](docs/8x8_board_size.jpg) ![10_example](docs/10x10_board_size.jpg)
+
+6. Intelligent targeting by computer.
+
+- To show the trackers behaviour, below is a full turn by turn documentation of what happens where the computer finds a valid target.
+
+- The computer's random choice eventually finds a valid target.
+![tracker_move_1](docs/tracker_1.jpg)
+- The computer, on its next move, should randomly choose between right, left, up, or down, for its next hit, attempting to seek out the rest of the hit ship. In this case it's 25% chance is successful, and it locates a second part of the ship.
+![tracker_move_2](docs/tracker_2.jpg)
+- On the third move it follows this direction for as long as it continues to find valid hits.
+![tracker_move_3](docs/tracker_3.jpg)
+- On the forth move it hits empty ocean. It should from here, recalibrate its behaviour.
+![tracker_move_4](docs/tracker_4.jpg)
+- Presumably, if the spot above the wave hit on the last turn was a valid option, not out of bounds, the computer would not select it. It now is repeating the random selection between right, left, up, and down. But since three of four options are able to return that they are already guessed, it chooses the remaining option, despite the random protocol.
+However, this is a flaw. The computer should be sent back to its original hit on this ship, not seek around the last spot, but simply continue down the same direction on the othe end.
+![tracker_move_5](docs/tracker_5.jpg)
+- On the next move, we return to the original hit, the computer has made a hit below the original. Presumably, it had a 50% chance of selecting 3,0 as coordinates.
+![tracker_move_6](docs/tracker_6.jpg)
+- The computer follows earlier behaviour and continues on, in this case, not until an unsuccessful hit, but until the ship returns that it is sunk. At the bottom of the image, the player's remaining ships out of total ships is adjusted.
+![tracker_move_7](docs/tracker_7.jpg)
+- Here on the next turn, the emojis have changed to reflect the sunken ship.
+![tracker_move_8](docs/tracker_8.jpg)
+- Finally, the computer returns to random guessing, at co-ordinates 6,8.
+![tracker_move_9](docs/tracker_9.jpg)
 
 # Build Log
 
