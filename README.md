@@ -162,6 +162,8 @@ starting coords.
         Error: Game end conditions aren't triggering.
 
         Error: Ship count is not reduced once full ship is successfully destroyed.
+        Methods: Guess checker function looked for change from 0 integer on board, updated to use ship.identifier.
+        Results: Full ship targeted means new emoji, and ships left tracker counts down.
 
 # Validation
 Ran code from all files through PEP8 linter

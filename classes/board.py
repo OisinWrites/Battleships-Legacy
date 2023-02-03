@@ -266,19 +266,21 @@ class Board:
         if result:
             for i in range(self.number_of_ships):
                 ship = self.ships[i]
-                if result is self.ships[i].symbol_list[0]:
-                    self.update_ship_damage(ship)
+                if result == str(ship.identifier):
+                    self.update_ship_damage(ship, opponent)
                     return True
         else:
             return False
 
-    def update_ship_damage(self, ship):
+    def update_ship_damage(self, ship, opponent):
         """"
         Checks through the ships damage tiles and updates as required
         """
         ship.number_of_damaged_tiles = ship.number_of_damaged_tiles + 1
+
         if ship.number_of_damaged_tiles == ship.length:
-            self.sink_ship()
+            ship.is_sunk = True
+            self.sink_ship(opponent)
 
     def update_sunk_ships(self, opponent):
         for i in range(self.number_of_ships):
@@ -287,8 +289,8 @@ class Board:
                 coords = ship.coordinates
                 for coord in coords:
                     self.ship_board[coord[0]][coord[1]] = '\U0001F525'
-                    opponent.board.guess_board[
-                        coord[0]][coord[1]] = '\U0001F525'
+                    opponent.board.guess_board[coord[0]][
+                                               coord[1]] = '\U0001F525'
 
     def update_board(self, guess, result, opponent):
         """"
@@ -326,6 +328,7 @@ class Board:
         # classes.sounds.play_ship_explosion()
         # classes.sounds.play_ship_sink()
         self.number_of_ships_remaining -= 1
+
         self.last_hit_sunk_ship = True
         return self.number_of_ships
 

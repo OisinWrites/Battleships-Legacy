@@ -73,7 +73,6 @@ class Game:
             computer.board.update_sunk_ships(player)
             # if win print and exit
             if game_over is True:
-                self.display_both_boards(player, computer)
                 print("Captain, we've won! With your infallible"
                       "battle strategy how could we have not succeeded?")
                 input("Hit enter to voyage home.").strip(" ")
@@ -92,7 +91,7 @@ class Game:
                             "to the Welcome Screen or hit enter\n"
                             "to stand your ground! \n"
                               ).strip(" ")
-            if user_input.lower() == "R":
+            if user_input.lower() == "r":
                 self.restart_game(player, computer)
                 break
 
@@ -102,7 +101,6 @@ class Game:
             player.board.update_sunk_ships(computer)
             self.display_stats(player, computer)
             if game_over is True:
-                self.display_both_boards(player, computer)
                 print("We've lost Captain, all vessels are scuppered. \n")
                 input("Hit enter to surrender..").strip(" ")
                 self.restart_game(player, computer)
@@ -113,13 +111,14 @@ class Game:
         print(player.name +
               " has " + str(player.turns_available) + " guesses left")
         print("Computer has "
-              + str(computer.board.number_of_ships) + " of",
-              str(computer.board.number_of_ships_remaining) + " ships left")
+              + str(computer.board.number_of_ships_remaining) + " of",
+              str(computer.board.number_of_ships) + " ships left")
         print(player.name + " has "
-              + str(player.board.number_of_ships) + " of",
-              str(player.board.number_of_ships_remaining) + " ships left \n")
+              + str(player.board.number_of_ships_remaining) + " of",
+              str(player.board.number_of_ships) + " ships left \n")
 
-    def display_both_boards(self, player, computer):
+    @staticmethod
+    def display_both_boards(player, computer):
         """
         Prints player's and computer's boards in terminal
         """
