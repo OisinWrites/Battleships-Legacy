@@ -6,11 +6,11 @@ def play_waves():
 
 
 def play_missile_launch():
-    playsound('utils/sounds/audio/underwater-missile.wav')
+    playsound('sounds/underwater-missile.wav')
 
 
 def play_missile_hit():
-    playsound('utils/sounds/audio/sea-explosion.wav')
+    playsound('sounds/sea-explosion.wav')
 
 
 def play_missile_miss():

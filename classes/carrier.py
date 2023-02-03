@@ -13,6 +13,5 @@ class Carrier(Ship):
         super().__init__(start_coordinate, direction, coordinates, identifier)
         self.name = "Carrier"
         self.length = 5
-        self.symbol_list = ['\U0001F6F3'+'   '] * self.length
+        self.symbol_list = ['\U0001F6F3'] * self.length
         self.identifier_symbols = str(identifier) * self.length
-# Carrier required additional spaces after emoji to stop board skewing.
