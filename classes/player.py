@@ -34,7 +34,7 @@ class Player:
         self.tracker = None
         self.name = name
         self.size = size
-        self.turns_available = int(size * size * .7)
+        self.turns_available = int(size * size * .8)
         self.board = Board(size, name)
         self.previous_guesses = []
         if self.name == 'Computer':
@@ -116,7 +116,7 @@ class Player:
                 if previously_guessed:
                     print(
                         f"But Captain {self.name}, we've already"
-                        "\n hit that location, we haven't missiles to spare\n!"
+                        "\n hit that location, we haven't missiles to spare!\n"
                         "Surely there's another location the enemy\n"
                         "could be hiding?\n"
                          )

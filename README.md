@@ -158,11 +158,14 @@ starting coords.
 
         ### Remaining Errors
         Error: Tile validation error, ships are being placed over one another.
-        Methods: 
+        Methods: Function "try to return to beginning of hit seq" defaulted to its else condition of select random. Adjusted code, and called on properly from get guess function.
+        Result: Intelligent tracking operational.
 
         Error: Tracker for intelligent computer choices not working
+        Methods: Arguments in tracker missing
 
         Error: Game end conditions aren't triggering.
+        Method: Running out of turns did trigger end. Resolving error below, where ship sunk wasn't working by continuing to use the identifier attribute throughout code.
 
         Error: Ship count is not reduced once full ship is successfully destroyed.
         Methods: Guess checker function looked for change from 0 integer on board, updated to use ship.identifier.
