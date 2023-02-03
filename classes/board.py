@@ -64,9 +64,9 @@ class Board:
     @staticmethod
     def build_board(size):
         """
-        Will create a square of '0's scaling with size.
+        Will create a square of wave emoji to suit board size.
         """
-        return [['\U0001F7E6' for count in range(size)]
+        return [['\U0001F30A' for count in range(size)]
                 for count in range(size)]
 
     def display(self):
@@ -77,18 +77,16 @@ class Board:
         character board less characters used in string.
         """
         classes.utilities.clear_display()
-        print(" " * 16 * self.number_of_ships_per_category * 2 +
-              f"This is {self.user}'s board")
         print(" " * 4 * self.number_of_ships_per_category * 2 +
-              "Friendly Waters" + " " * (self.size * 2 + 8) + "Enemy Waters")
+              "Friendly Waters" + " " * (self.size * 2 + 20) + "Enemy Waters")
 
         # code to print top 'x axis' coordinates, scalable to size
         rowHeader = " "
 
         for i in range(self.size):
-            rowHeader = rowHeader + str(i) + "  "
+            rowHeader = rowHeader + str(i) + "   "
 
-        print("   " + rowHeader + (" ") * (11) + rowHeader)
+        print("   " + rowHeader + (" ") * (15) + rowHeader)
         """
         This code is to print a grid of rows, with
         as many rows as there are x ""columns"",
@@ -299,8 +297,8 @@ class Board:
         """
         if result is False:
             # miss uses unicode for ocean emoji
-            self.guess_board[guess[0]][guess[1]] = "\U0001F30A"
-            opponent.board.ship_board[guess[0]][guess[1]] = "\U0001F30A"
+            self.guess_board[guess[0]][guess[1]] = "\U0001F300"
+            opponent.board.ship_board[guess[0]][guess[1]] = "\U0001F300"
             # Code will only ever show the human users view
             if self.user != "Computer":
                 self.display()
