@@ -24,6 +24,9 @@ I want to be able to place my own ships both manually and automatically.
 - Nesting order between classes established in doc string.
 - README file intiated with user stories, features to be included, Build Log, Error, Testing, and Deployment headers. Deployment content completed.
 
+## Logic Flowchart
+![flowchart](docs/logic_flowchart.jpg)
+
 ## Plan of Action
 - Create a minimal viable product version first. Use one ship, random only not manual placement of ships, maybe without error handling yet, or win conditions. Test deployment on Heroku.
         1. Establish ship class
