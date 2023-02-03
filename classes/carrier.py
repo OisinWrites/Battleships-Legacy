@@ -13,5 +13,5 @@ class Carrier(Ship):
         super().__init__(start_coordinate, direction, coordinates, identifier)
         self.name = "Carrier"
         self.length = 5
-        self.symbol_list = ["C"] * self.length
+        self.symbol_list = ['\U0001F6F3'] * self.length
         self.identifier_symbols = str(identifier) * self.length

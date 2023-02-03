@@ -13,5 +13,5 @@ class Frigate(Ship):
         super().__init__(start_coordinate, direction, coordinates, identifier)
         self.name = "Frigate"
         self.length = 4
-        self.symbol_list = ["F"] * self.length
+        self.symbol_list = ['\U000026F5'] * self.length
         self.identifier_symbols = str(identifier) * self.length

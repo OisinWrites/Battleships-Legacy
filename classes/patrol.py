@@ -13,5 +13,5 @@ class Patrol(Ship):
         super().__init__(start_coordinate, direction, coordinates, identifier)
         self.name = "Patrol"
         self.length = 2
-        self.symbol_list = ["P"] * self.length
+        self.symbol_list = ['\U0001F6A4'] * self.length
         self.identifier_symbols = str(identifier) * self.length

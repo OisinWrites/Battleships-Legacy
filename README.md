@@ -182,15 +182,14 @@ starting coords.
         Results: pep 8 standards upheld.
 
         Error: Game breaking when a guess is made outside of the board.
-        Methods: 
-        Results:
+        Methods: Created raise statement for guesses outside of board limitations
+        Results: Game won't break, player is invited to guess again.
 
         Error: Heroku unable to play sounds, asks to install pygobjet
         Terminal in gitpod doesn't recognise 'pip install pygobject' command.
         Methods: White out code relating to sound with #.
         Results: Currently continuing without sound.
 
-        ### Remaining Errors
         Error: Tile validation error, ships are being placed over one another.
         Methods: Function "try to return to beginning of hit seq" defaulted to its else condition of select random. Adjusted code, and called on properly from get guess function.
         Result: Intelligent tracking operational.
@@ -200,10 +199,13 @@ starting coords.
 
         Error: Game end conditions aren't triggering.
         Method: Running out of turns did trigger end. Resolving error below, where ship sunk wasn't working by continuing to use the identifier attribute throughout code.
+        Result: Game end conditions are in effect.
 
         Error: Ship count is not reduced once full ship is successfully destroyed.
         Methods: Guess checker function looked for change from 0 integer on board, updated to use ship.identifier.
         Results: Full ship targeted means new emoji, and ships left tracker counts down.
+
+        Error: When auto placing ships, if a ship over laps another, the code randomises the segments position but not the whole ship, leaving parts of the same ship scattered across the board.
 
 # Validation
 Ran code from all files through PEP8 linter

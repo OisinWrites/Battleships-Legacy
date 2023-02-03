@@ -13,5 +13,5 @@ class Submarine(Ship):
         super().__init__(start_coordinate, direction, coordinates, identifier)
         self.name = "Submarine"
         self.length = 3
-        self.symbol_list = ["S"] * self.length
+        self.symbol_list = ['\U00002693'] * self.length
         self.identifier_symbols = str(identifier) * self.length

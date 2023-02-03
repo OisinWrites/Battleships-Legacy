@@ -66,7 +66,8 @@ class Board:
         """
         Will create a square of '0's scaling with size.
         """
-        return [['O' for count in range(size)] for count in range(size)]
+        return [['\U0001F7E6' for count in range(size)]
+                for count in range(size)]
 
     def display(self):
         """
