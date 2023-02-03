@@ -34,7 +34,7 @@ class Player:
         self.tracker = None
         self.name = name
         self.size = size
-        self.turns_available = int(size * size * .8)
+        self.turns_available = int(size * size * .7)
         self.board = Board(size, name)
         self.previous_guesses = []
         if self.name == 'Computer':
@@ -146,7 +146,7 @@ class Player:
         print(f"{self.name}'s turn")
         guess = self.make_guess()
         # classes.sounds.play_missile_launch()
-        guess_hit_check = opponent.board.guess_checker(guess)
+        guess_hit_check = opponent.board.guess_checker(guess, self)
         sunk_ship = opponent.board.check_last_hit_sunk()
 
         if (guess_hit_check is True) & (self.name == "Computer"):

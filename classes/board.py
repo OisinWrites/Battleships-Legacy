@@ -77,9 +77,9 @@ class Board:
         """
         classes.utilities.clear_display()
         print(" " * 16 * self.number_of_ships_per_category * 2 +
-              f"This is {self.user} board")
+              f"This is {self.user}'s board")
         print(" " * 4 * self.number_of_ships_per_category * 2 +
-              "Friendly Waters" + " " * (self.size * 2 + 4) + "Enemy Waters")
+              "Friendly Waters" + " " * (self.size * 2 + 8) + "Enemy Waters")
 
         # code to print top 'x axis' coordinates, scalable to size
         rowHeader = " "
@@ -134,7 +134,6 @@ class Board:
                 self.display()
                 start_position = input(
                     f"From where would you like your ship "
-                    # pep8 disagrees with git lint
                     "to start?\n"
                     "\nPlease enter two numbers (row then column)\n"
                     "i.e 4,5 or 45: \n").strip(" ")
@@ -255,7 +254,7 @@ class Board:
                 self.ship_board[ship.coordinates[i][0]
                                 ][ship.coordinates[i][1]] = ship.symbol_list[i]
 
-    def guess_checker(self, guess):
+    def guess_checker(self, guess, opponent):
         """
         Checks guess against fleet dictionary.
         Calls method to update ship damage
@@ -319,14 +318,14 @@ class Board:
                 print(f"{self.user} made a Direct hit!")
                 # classes.sounds.play_missile_hit()
 
-    def sink_ship(self):
+    def sink_ship(self, opponent):
         """
         Reduces number of ships by one.
         """
         print(f"{self.user} destroyed a ship!!")
         # classes.sounds.play_ship_explosion()
         # classes.sounds.play_ship_sink()
-        self.number_of_ships -= 1
+        self.number_of_ships_remaining -= 1
         self.last_hit_sunk_ship = True
         return self.number_of_ships
 

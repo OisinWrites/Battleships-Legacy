@@ -20,15 +20,13 @@ def size_input():
     valid_size = False
     while not valid_size:
         size = input("How many knots from the coast will \n"
-                        # argument over indentation with pep8 linter
-                        "we engage the enemy, 8, or 10?\n")
+                     "we engage the enemy, 8, or 10?\n")
         if len(size.strip(" ")) == 0:
             print("Surely we haven't run aground?\n")
             continue
         if (int(size) != 8) & (int(size) != 10):
             print("We can't be looking at the same sea!? \n"
-                    # argument over indentation with pep8 linter
-                    "Valid Options are 8 or 10. \n")
+                  "Valid Options are 8 or 10. \n")
             continue
 
         return int(size)
@@ -41,9 +39,8 @@ def name_input():
         name = input("To whom do we report, sir?\n")
         if len(name.strip(" ")) == 0:
             print("Apologies sir, the missiles have left me \n"
-                    # argument over indentation with pep8 linter
-                    "hard of hearing."
-                    "\nCould you repeat that, please?")
+                  "hard of hearing."
+                  "\nCould you repeat that, please?")
             continue
 
         elif name.lower() == "computer":
@@ -116,7 +113,7 @@ def direction_input():
             return "v"
         else:
             print("Not a valid input please only type 'h' or 'v'\n"
-                   "(Letter casing does not matter):")
+                  "(Letter casing does not matter):")
 
 
 def coord_error_msg():
@@ -127,10 +124,9 @@ def coord_error_msg():
     what qualifies as a valid input
     """
     new_guess = input("Captain, my tinnitus must be affecting"
-                        # argument over indentation with pep8 linter
-                        "my hearing again. Surely you meant to target"
-                        "coordinates in the sea?"
-                        "(e.g. 4,3 or 43): \n").strip(" ")
+                      "my hearing again. Surely you meant to target"
+                      "coordinates in the sea?"
+                      "(e.g. 4,3 or 43): \n").strip(" ")
     return new_guess
 
 
