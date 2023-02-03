@@ -159,6 +159,8 @@ starting coords.
 
         Error: Game end conditions aren't triggering.
 
+        Error: Ship count is not reduced once full ship is successfully destroyed.
+
 # Validation
 Ran code from all files through PEP8 linter
 1. Board
@@ -180,6 +182,8 @@ Ran code from all files through PEP8 linter
 9. Sound
 - Note linter complained about hyphenation in sound file naming,
 misunderstanding them as minuses and requesting spaces around them.
+*Linting performed to PYCODESYLE requirements.*
+
 -![](docs/sound-validation.png)
 10. Submarine
 -![](docs/submarine-validation.png)
@@ -187,6 +191,11 @@ misunderstanding them as minuses and requesting spaces around them.
 -![](docs/tracker-validaiton.png)
 12. Utilities
 -![](docs/utilities-validation.png)
+
+# Citation
+Information from Stack Overflow: https://stackoverflow.com/questions/36695039/python-battleships-game
+Inspiration from an example build on youtube: https://www.bing.com/videos/search?q=write+a+battleships+game+using+python+youtube&view=detail&mid=8594DB5588419EE0334C8594DB5588419EE0334C&FORM=VIRE
+For images and fonts in terminal: http://patorjk.com/software/taag/#p=display&f=X99&t=Type%20Something%20
 
 # Deployment
     ## Deploying to Heroku
