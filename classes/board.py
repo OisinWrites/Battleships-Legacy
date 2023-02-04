@@ -81,12 +81,12 @@ class Board:
               "Friendly Waters" + " " * (self.size * 2 + 20) + "Enemy Waters")
 
         # code to print top 'x axis' coordinates, scalable to size
-        rowHeader = " "
+        rowHeader = ""
 
         for i in range(self.size):
-            rowHeader = rowHeader + str(i) + "   "
+            rowHeader = rowHeader + str(i) + " "
 
-        print(" " + rowHeader + (" ") * (self.size + 4) + rowHeader)
+        print("   " + rowHeader + (" ") * (self.size + 4) + rowHeader)
         """
         This code is to print a grid of rows, with
         as many rows as there are x ""columns"",
