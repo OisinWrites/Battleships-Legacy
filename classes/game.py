@@ -73,8 +73,8 @@ class Game:
             computer.board.update_sunk_ships(player)
             # if win print and exit
             if game_over is True:
-                print("Captain, we've won! With your infallible"
-                      "battle strategy how could we have not succeeded?")
+                print("Captain, we've won! With your infallible\n"
+                      "battle strategy how could we have not succeeded?\n")
                 input("Hit enter to voyage home.").strip(" ")
                 self.restart_game(player, computer)
                 break
