@@ -15,7 +15,7 @@ import random
 import classes.utilities
 from classes.tracker import Tracker
 import classes.sounds
-import playsound
+from playsound import playsound
 
 
 class Player:
@@ -146,7 +146,7 @@ class Player:
         """
         print(f"{self.name}'s turn")
         guess = self.make_guess()
-        playsound('sounds/underwater-missile.wav')
+        playsound('classes/underwater-missile.wav')
         guess_hit_check = opponent.board.guess_checker(guess, self)
         sunk_ship = opponent.board.check_last_hit_sunk()
 
