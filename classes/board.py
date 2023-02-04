@@ -84,7 +84,7 @@ class Board:
         rowHeader = ""
 
         for i in range(self.size):
-            rowHeader = rowHeader + str(i) + " "
+            rowHeader = rowHeader + str(i) + "   "
 
         print("   " + rowHeader + (" ") * (self.size + 4) + rowHeader)
         """
