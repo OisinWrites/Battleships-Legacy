@@ -86,7 +86,7 @@ class Board:
         for i in range(self.size):
             rowHeader = rowHeader + str(i) + "  "
 
-        print("     " + rowHeader + ("   ") * (self.size + 4) + rowHeader)
+        print("     " + rowHeader + ("  ") * (self.size)  + rowHeader)
         """
         This code is to print a grid of rows, with
         as many rows as there are x ""columns"",
