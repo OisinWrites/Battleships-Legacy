@@ -53,7 +53,7 @@ class Player:
         while invalid_input:
             setup_type = input(
                 'Type "(M)anual" to place your ships '
-                'yourself\nOtherwise hit any key').lower().strip(" ")
+                'yourself\nOtherwise hit enter.\n').lower().strip(" ")
             if setup_type == "manual" or setup_type == "m":
                 invalid_input = False
                 return True
