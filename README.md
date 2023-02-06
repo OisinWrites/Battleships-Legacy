@@ -196,6 +196,7 @@ starting coords.
 
         Error: Tracker for intelligent computer choices not working
         Methods: Arguments in tracker missing
+        Result: Tracker functioning, but not yet ideal. Hunts around last hit before returning to first.
 
         Error: Game end conditions aren't triggering.
         Method: Running out of turns did trigger end. Resolving error below, where ship sunk wasn't working by continuing to use the identifier attribute throughout code.
@@ -206,6 +207,8 @@ starting coords.
         Results: Full ship targeted means new emoji, and ships left tracker counts down.
 
         Error: When auto placing ships, if a ship over laps another, the code randomises the segments position but not the whole ship, leaving parts of the same ship scattered across the board.
+        Method: Created raise statemnets to handle this error in manual placement.
+        Result: Player is invited to reenter coordinates for ship position.
 
 # Validation
 Ran code from all files through PEP8 linter

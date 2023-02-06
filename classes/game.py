@@ -130,7 +130,7 @@ class Game:
         Deletes player object and their possessed ship, and boards
         Returns users back to the welcome screen
         """
-        del (player1)
-        del (player2)
+        del player1
+        del player2
         classes.utilities.clear_display()
         self.welcome_screen()
