@@ -203,11 +203,22 @@ class Board:
                 if ship.start_coordinate[index_to_increment] + \
                         (ship.length - 1) > (self.size-1):
 
-                    ship.start_coordinate = (
-                        random.randint(
-                            0, self.size-1), random.randint(
-                            0, self.size-1))
-                    ship.direction = random.choice(["h", "v"])
+                    if self.manual_placement:
+                        print("Out of bounds")
+                        ship.start_coordinate = input(
+                            "Pick a new start coordinate for your "
+                            f"{ship.name}? \nPlease enter two numbers "
+                            "(row then column) i.e 4,5 or 45: \n").strip(" ")
+                        ship.start_coordinate = classes.utilities.coordval(
+                            ship.start_coordinate)
+                        ship.direction = classes.utilities.direction_input()
+                        break
+                    else:
+                        ship.start_coordinate = (
+                            random.randint(
+                                0, self.size-1), random.randint(
+                                0, self.size-1))
+                        ship.direction = random.choice(["h", "v"])
 
                 # If next tile is unoccupied, add the coordinate to
                 # a temporay list and if list is equal to the
