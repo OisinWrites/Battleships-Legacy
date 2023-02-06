@@ -233,12 +233,23 @@ class Board:
                 # If any tile in the process is occupied a new start coordinate
                 # is requested/generated and the process starts again
                 else:
-                    ship.start_coordinate = (
-                        random.randint(
-                            0, self.size-1), random.randint(
-                            0, self.size-1))
-                    ship.direction = random.choice(["r", "d"])
-                    break
+                    if self.manual_placement:
+                        print("There is already another ship there")
+                        ship.start_coordinate = input(
+                            "Pick a new start coordinate for your "
+                            f"{ship.name}? \nPlease enter two numbers "
+                            "(row then column) i.e 4,5 or 45: \n").strip(" ")
+                        ship.start_coordinate = classes.utilities.coordval(
+                            ship.start_coordinate)
+                        ship.direction = classes.utilities.direction_input()
+                        break
+                    else:
+                        ship.start_coordinate = (
+                            random.randint(
+                                0, self.size-1), random.randint(
+                                0, self.size-1))
+                        ship.direction = random.choice(["r", "d"])
+                        break
 
         return ship.coordinates
 
