@@ -211,7 +211,8 @@ starting coords.
         Result: Player is invited to reenter coordinates for ship position.
 
 # Validation
-Ran code from all files through PEP8 linter
+Ran code from all files through PEP8 linter. Pycodestyle module installed, and code written to conform to this linter.
+
 1. Board
 -![](docs/board-validation.png)
 2. Carrier
